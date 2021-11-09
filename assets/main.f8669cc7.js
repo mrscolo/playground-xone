@@ -3,11 +3,11 @@ var P=Object.defineProperty;var I=Object.getOwnPropertySymbols;var O=Object.prot
 				<!-- aside menu -->
 				<aside>
 					<button>
-						<img src="/playground-xone/src/assets/editor.png" width="32" />
+						<img src="/playground-xone/assets/editor.png" width="32" />
 					</button>
 					<div class="expand"></div>
 					<button>
-						<img src="/playground-xone/src/assets/setting.png" width="32" />
+						<img src="/playground-xone/assets/setting.png" width="32" />
 					</button>
 				</aside>
 				<!-- split panels -->

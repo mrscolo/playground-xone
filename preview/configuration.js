@@ -2,7 +2,7 @@ export default {
   // Title
   title: "All by xone",
   // Path
-  path: "preview",
+  path: "/playground-xone/preview/",
   // IDS PROD
   apiUrl: "https://web.xonedev.cloud/api/itf/DoAction",
   idsUrl: "https://ids.xonedev.cloud/connect/token",

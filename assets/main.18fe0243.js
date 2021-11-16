@@ -10,7 +10,7 @@ var F=Object.defineProperty,R=Object.defineProperties;var z=Object.getOwnPropert
 						<img src="/playground-xone/assets/editor.png" width="32" />
 					</button>
 					<div class="expand"></div>
-					<a .href=${`https://mrscolo.github.io/xone-framework/#/preview?v=${this.urlParam}`}>
+					<a .href=${`https://mrscolo.github.io/xone-framework/#/preview?v=${this.urlParam}`} target="_blank">
 						<img src="/playground-xone/assets/share.png" width="32" />
 					</a>
 					<button @click=${()=>this.isSettingsOpened=!this.isSettingsOpened}>

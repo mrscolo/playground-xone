@@ -7004,7 +7004,7 @@ declare class XoneUI {
             textColor?: string;
             actionText?: string;
             actionTextColor?: string;
-            actionMethod?: Function;
+            actionMethod?: () => void;
         }): void;
     showSoftwareKeyboard(): void;
     /**

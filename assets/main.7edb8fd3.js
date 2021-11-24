@@ -1,6 +1,6 @@
-var M=Object.defineProperty,U=Object.defineProperties;var G=Object.getOwnPropertyDescriptors;var L=Object.getOwnPropertySymbols;var X=Object.prototype.hasOwnProperty,B=Object.prototype.propertyIsEnumerable;var w=(e,t,a)=>t in e?M(e,t,{enumerable:!0,configurable:!0,writable:!0,value:a}):e[t]=a,m=(e,t)=>{for(var a in t||(t={}))X.call(t,a)&&w(e,a,t[a]);if(L)for(var a of L(t))B.call(t,a)&&w(e,a,t[a]);return e},g=(e,t)=>U(e,G(t));import{p as z,e as $,t as y,n as A,s as h,d as N,a as T,b as f,W as H,c as W,f as K,l as x,g as J,h as d,i as Y}from"./vendor.621e38c1.js";const Q=function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))s(n);new MutationObserver(n=>{for(const i of n)if(i.type==="childList")for(const o of i.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&s(o)}).observe(document,{childList:!0,subtree:!0});function a(n){const i={};return n.integrity&&(i.integrity=n.integrity),n.referrerpolicy&&(i.referrerPolicy=n.referrerpolicy),n.crossorigin==="use-credentials"?i.credentials="include":n.crossorigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function s(n){if(n.ep)return;n.ep=!0;const i=a(n);fetch(n.href,i)}};Q();String.prototype.compress=function(e){e=e===!0;var t,a={},s=this,n,i,o="",r=[],l="",b=256;for(t=0;t<256;t+=1)a[String.fromCharCode(t)]=t;for(t=0;t<s.length;t+=1)n=s.charAt(t),i=o+n,a.hasOwnProperty(i)?o=i:(r.push(a[o]),l+=String.fromCharCode(a[o]),a[i]=b++,o=String(n));return o!==""&&(r.push(a[o]),l+=String.fromCharCode(a[o])),e?r:l};String.prototype.decompress=function(){var e,t=[],a=[],s=this,n,i,o,r="",l=256;for(e=0;e<256;e+=1)a[e]=String.fromCharCode(e);if(s&&typeof s=="string"){for(e=0;e<s.length;e+=1)t.push(s[e].charCodeAt(0));s=t,t=null}for(n=String.fromCharCode(s[0]),i=n,e=1;e<s.length;e+=1){if(o=s[e],a[o])r=a[o];else if(o===l)r=n+n.charAt(0);else return null;i+=r,a[l++]=n+r.charAt(0),n=r}return i};const Z=()=>["createObject","currentItem","deleteItem","deleteObject","executeNode","findObject","get","getCollection","getContents","getCurrentItem","getItem","getText","hasSomething","loadAll","loadFromJson","loadFromJsonArray","moveFirst","moveLast","moveNext","movePrev","msgBox","msgBoxWithSound","pickFile","save","setText","sleep","startBrowse","startCamera","startGps","startGpsV1","startGpsV2"];let v;const ee=["body","expression","declarations","init","callee","object","argument","arguments","right"],te=()=>v=Z(),ne=new DOMParser;function ae(e,t){try{if(!t)return e;ne.parseFromString(`<root>${e}</root>`,"text/xml").querySelectorAll("action > script").forEach(s=>e=e.replace(s.textContent,`
-`+R(s.textContent)))}catch{}finally{return e}}function oe(e,t){try{return t?(te(),R(e)):e}catch{return e}}function R(e){try{const t=e;let a=t;try{t.match(/'([^']+)'/).forEach(o=>{a=a.replace(o,o.split(`
-`).join("~~"))})}catch{}const s=z(a,{ecmaVersion:2022}),n=(o,r,l=!1)=>{var D,I,P,j;((D=o.type)==null?void 0:D.includes("Function"))&&r.push(o),ee.forEach(u=>{!o[u]||n(o[u],r,l)}),r=r.filter(u=>u!==o),o instanceof Array&&o.forEach(u=>{n(u,r,l)});const b=((I=o.callee)==null?void 0:I.name)||((j=(P=o.callee)==null?void 0:P.property)==null?void 0:j.name);if(!(!b||!v.includes(b)))if(l){if(r.length===0)return;const{name:u}=r[0].id;v.includes(u)||v.push(u)}else{const u=m({},o);o.type="AwaitExpression",o.argument=u,r.forEach(k=>k.async=!0)}};let i;do i=v.length,s.body.forEach(o=>n(o,[],!0));while(i!==v.length);return s.body.forEach(o=>n(o,[])),$.generate(s)}catch{return""}}var se=Object.defineProperty,ie=Object.getOwnPropertyDescriptor,p=(e,t,a,s)=>{for(var n=s>1?void 0:s?ie(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&se(t,a,n),n};let c=class extends h{constructor(){super();this.xmlString="",this.cssString="",this.jsString="",this.urlParam="",this.settings={resolutionWidth:-1,resolutionHeight:-1,webLayout:"",scaleFontsize:"false",fontFactor:5},this.isSettingsOpened=!1,this.initEditorValues()}createRenderRoot(){return this}initEditorValues(){try{const{hash:e}=window.location,[t,a,s,n,i,o,r,l]=e.split(e.includes("%7C")?"%7C":"|");if(t&&(this.xmlString=N(t).decompress()),a&&(this.cssString=N(a).decompress()),s&&(this.jsString=N(s).decompress()),n)try{this.settings.resolutionWidth=Number(n)}catch{}i&&(this.settings.resolutionHeight=Number(i)),o&&(this.settings.webLayout=N(o.decompress())),r&&(this.settings.scaleFontsize=r),l&&(this.settings.fontFactor=Number(l))}catch{}}reloadPreview(){var a;this.updateUrl(!0);const e=document.querySelector("xone-preview");e&&((a=e.parentElement)==null||a.removeChild(e));const t=document.getElementById("editor-panel");t.innerHTML=`<xone-preview url="https://mrscolo.github.io/xone-framework/" urlParam=${this.urlParam}></xone-preview>`}updated(e){!e.has("xmlString")&&!e.has("cssString")&&!e.has("jsString")||!this.xmlString&&!this.cssString&&!this.jsString||(this.updateUrl(!1),this.updateTimeout&&clearTimeout(this.updateTimeout),this.updateTimeout=setTimeout(()=>this.reloadPreview(),document.querySelector("xone-preview")?2500:0))}updateUrl(e){const{resolutionWidth:t,resolutionHeight:a,webLayout:s,scaleFontsize:n,fontFactor:i}=this.settings,o=oe(this.jsString,e),r=ae(this.xmlString,e);let l=`${T(r.compress())}|${T(this.cssString.compress())}|${T(o.compress())}`;l+=`|${t.toString()}|${a.toString()}|${T(s.toString().compress())}`,l+=`|${n}|${i}`,e?this.urlParam=l:window.location.hash=l}render(){return f`
+var M=Object.defineProperty,U=Object.defineProperties;var G=Object.getOwnPropertyDescriptors;var L=Object.getOwnPropertySymbols;var X=Object.prototype.hasOwnProperty,B=Object.prototype.propertyIsEnumerable;var w=(e,t,a)=>t in e?M(e,t,{enumerable:!0,configurable:!0,writable:!0,value:a}):e[t]=a,m=(e,t)=>{for(var a in t||(t={}))X.call(t,a)&&w(e,a,t[a]);if(L)for(var a of L(t))B.call(t,a)&&w(e,a,t[a]);return e},b=(e,t)=>U(e,G(t));import{p as z,e as $,t as g,n as A,s as h,d as N,a as T,b as _,W as H,c as W,f as K,l as x,g as J,h as d,i as Y}from"./vendor.3c675b84.js";const Q=function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))o(n);new MutationObserver(n=>{for(const i of n)if(i.type==="childList")for(const s of i.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function a(n){const i={};return n.integrity&&(i.integrity=n.integrity),n.referrerpolicy&&(i.referrerPolicy=n.referrerpolicy),n.crossorigin==="use-credentials"?i.credentials="include":n.crossorigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function o(n){if(n.ep)return;n.ep=!0;const i=a(n);fetch(n.href,i)}};Q();String.prototype.compress=function(){var e,t={},a=this,o,n,i="",s=[],r="",l=256;for(e=0;e<256;e+=1)t[String.fromCharCode(e)]=e;for(e=0;e<a.length;e+=1)o=a.charAt(e),n=i+o,t.hasOwnProperty(n)?i=n:(s.push(t[i]),r+=String.fromCharCode(t[i]),t[n]=l++,i=String(o));return i!==""&&(s.push(t[i]),r+=String.fromCharCode(t[i])),r};String.prototype.decompress=function(){var e,t=[],a=[],o=this,n,i,s,r="",l=256;for(e=0;e<256;e+=1)a[e]=String.fromCharCode(e);if(o&&typeof o=="string"){for(e=0;e<o.length;e+=1)t.push(o[e].charCodeAt(0));o=t,t=null}for(n=String.fromCharCode(o[0]),i=n,e=1;e<o.length;e+=1){if(s=o[e],a[s])r=a[s];else if(s===l)r=n+n.charAt(0);else return null;i+=r,a[l++]=n+r.charAt(0),n=r}return i};const Z=()=>["createObject","currentItem","deleteItem","deleteObject","executeNode","findObject","get","getCollection","getContents","getCurrentItem","getItem","getText","hasSomething","loadAll","loadFromJson","loadFromJsonArray","moveFirst","moveLast","moveNext","movePrev","msgBox","msgBoxWithSound","pickFile","save","setText","sleep","startBrowse","startCamera","startGps","startGpsV1","startGpsV2"];let y;const ee=["body","expression","declarations","init","callee","object","argument","arguments","right"],te=()=>y=Z(),ne=new DOMParser;function ae(e,t){try{if(!t)return e;ne.parseFromString(`<root>${e}</root>`,"text/xml").querySelectorAll("action > script").forEach(o=>e=e.replace(o.textContent,`
+`+R(o.textContent)))}catch{}finally{return e}}function oe(e,t){try{return t?(te(),R(e)):e}catch{return e}}function R(e){try{const t=e;let a=t;try{t.match(/'([^']+)'/).forEach(s=>{a=a.replace(s,s.split(`
+`).join("~~"))})}catch{}const o=z(a),n=(s,r,l=!1)=>{var D,I,P,j;((D=s.type)==null?void 0:D.includes("Function"))&&r.push(s),ee.forEach(u=>{!s[u]||n(s[u],r,l)}),r=r.filter(u=>u!==s),s instanceof Array&&s.forEach(u=>{n(u,r,l)});const C=((I=s.callee)==null?void 0:I.name)||((j=(P=s.callee)==null?void 0:P.property)==null?void 0:j.name);if(!(!C||!y.includes(C)))if(l){if(r.length===0)return;const{name:u}=r[0].id;y.includes(u)||y.push(u)}else{const u=m({},s);s.type="AwaitExpression",s.argument=u,r.forEach(k=>k.async=!0)}};let i;do i=y.length,o.body.forEach(s=>n(s,[],!0));while(i!==y.length);return o.body.forEach(s=>n(s,[])),$.generate(o)}catch{return""}}var se=Object.defineProperty,ie=Object.getOwnPropertyDescriptor,p=(e,t,a,o)=>{for(var n=o>1?void 0:o?ie(t,a):t,i=e.length-1,s;i>=0;i--)(s=e[i])&&(n=(o?s(t,a,n):s(n))||n);return o&&n&&se(t,a,n),n};let c=class extends h{constructor(){super();this.xmlString="",this.cssString="",this.jsString="",this.urlParam="",this.settings={resolutionWidth:-1,resolutionHeight:-1,webLayout:"",scaleFontsize:"false",fontFactor:5},this.isSettingsOpened=!1,this.initEditorValues()}createRenderRoot(){return this}initEditorValues(){try{const{hash:e}=window.location,[t,a,o,n,i,s,r,l]=e.split(e.includes("%7C")?"%7C":"|");if(t&&(this.xmlString=N(t).decompress()),a&&(this.cssString=N(a).decompress()),o&&(this.jsString=N(o).decompress()),n)try{this.settings.resolutionWidth=Number(n)}catch{}i&&(this.settings.resolutionHeight=Number(i)),s&&(this.settings.webLayout=N(s.decompress())),r&&(this.settings.scaleFontsize=r),l&&(this.settings.fontFactor=Number(l))}catch{}}reloadPreview(){var a;this.updateUrl(!0);const e=document.querySelector("xone-preview");e&&((a=e.parentElement)==null||a.removeChild(e));const t=document.getElementById("editor-panel");t.innerHTML=`<xone-preview url="https://mrscolo.github.io/xone-framework/" urlParam=${this.urlParam}></xone-preview>`}updated(e){!e.has("xmlString")&&!e.has("cssString")&&!e.has("jsString")||!this.xmlString&&!this.cssString&&!this.jsString||(this.updateUrl(!1),this.updateTimeout&&clearTimeout(this.updateTimeout),this.updateTimeout=setTimeout(()=>this.reloadPreview(),document.querySelector("xone-preview")?2500:0))}updateUrl(e){const{resolutionWidth:t,resolutionHeight:a,webLayout:o,scaleFontsize:n,fontFactor:i}=this.settings,s=oe(this.jsString,e),r=ae(this.xmlString,e);let l=`${T(r.compress())}|${T(this.cssString.compress())}|${T(s.compress())}`;l+=`|${t.toString()}|${a.toString()}|${T(o.toString().compress())}`,l+=`|${n}|${i}`,e?this.urlParam=l:window.location.hash=l}render(){return _`
 			<div class="main-layout">
 				<!-- XOne image -->
 				<div style="position:absolute;z-index:1;bottom:25px;left:100px;opacity:.2;">
@@ -20,7 +20,7 @@ var M=Object.defineProperty,U=Object.defineProperties;var G=Object.getOwnPropert
 					</button>
 				</aside>
 				<!-- settings panel -->
-				${this.isSettingsOpened?f`
+				${this.isSettingsOpened?_`
 								<xone-settings
 									.onUpdate=${e=>{this.settings=m({},e),this.updateUrl(!1),this.reloadPreview()}}
 									.settings=${this.settings}
@@ -55,7 +55,7 @@ var M=Object.defineProperty,U=Object.defineProperties;var G=Object.getOwnPropert
 					<div id="editor-panel" class="panel"></div>
 				</sp-split-view>
 			</div>
-		`}};p([y()],c.prototype,"xmlString",2);p([y()],c.prototype,"cssString",2);p([y()],c.prototype,"jsString",2);p([y()],c.prototype,"urlParam",2);p([y()],c.prototype,"settings",2);p([y()],c.prototype,"isSettingsOpened",2);c=p([A("xone-app")],c);var re=`<?xml version="1.0" encoding="utf-8" ?>
+		`}};p([g()],c.prototype,"xmlString",2);p([g()],c.prototype,"cssString",2);p([g()],c.prototype,"jsString",2);p([g()],c.prototype,"urlParam",2);p([g()],c.prototype,"settings",2);p([g()],c.prototype,"isSettingsOpened",2);c=p([A("xone-app")],c);var re=`<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid XML Studio Developer Bundle Edition (Trial) (http://www.liquid-technologies.com)-->
 <xs:schema xmlns="http://www.cgsoft.es/schema/"
            attributeFormDefault="unqualified"
@@ -5465,7 +5465,7 @@ var M=Object.defineProperty,U=Object.defineProperties;var G=Object.getOwnPropert
     </xs:complexType>
   </xs:element>
 </xs:schema>`;const le=`
-declare class XoneDataCollection implements IFieldProperties {
+declare class XoneDataCollection {
     get isDataCollection(): boolean;
     static PROP_TYPE_INTEGER: number;
     static PROP_TYPE_STRING: number;
@@ -5855,7 +5855,7 @@ declare class XoneDataCollection implements IFieldProperties {
     loadFromJson(...FunctionParams: any[]): XoneDataCollection;
     private loadFromJsonArray;}
 `,xe=`
-declare class XoneApplication implements IXoneApp {
+declare class XoneApplication {
     get isApplication(): boolean;
     private _objectID;
     private m_PushExit;
@@ -5898,7 +5898,7 @@ declare class XoneApplication implements IXoneApp {
     private m_strAppPath;
     private m_fileManager;
     private m_messages;
-    protected m_company: IXoneObject;
+    protected m_company: XoneDataObject;
     private m_strEntIdOwner;
     private m_strUserIdColl;
     private m_strEntIdLevel;
@@ -5966,8 +5966,8 @@ declare class XoneApplication implements IXoneApp {
     getIdColl(): string;
     getCurrentCompany(): XoneDataObject;
     getUserIdColl(): string;
-    getUser(): IXoneObject;
-    getCurrency(): IXoneObject;
+    getUser(): XoneDataObject;
+    getCurrency(): XoneDataObject;
     getEntIdLevel(): string;
     getEntIdColl(): string;
     getEntIdOwner(): string;
@@ -6030,7 +6030,7 @@ declare class XoneApplication implements IXoneApp {
     LoadCollection(CollName: string): XoneDataCollection;
     private LoadExternalCollection;
     hashCode(): string;
-    getCompany(): IXoneObject;
+    getCompany(): XoneDataObject;
     GetCollPropValueCache(CollName: string, NodeType?: string, NodeName?: string): Hashtable<string, any>;
     GetCollPropUndefinedValues(CollName: string): string[];
     getMessageHolder(): IMessageHolder;
@@ -6065,7 +6065,7 @@ declare class XoneApplication implements IXoneApp {
      *  @param Company				Empresa que se quiere setear como activa.
      *  @return						Devuelve TRUE si los datos de la empresa se cargan correctamente.
      */
-    protected LoadCompanyData(Company: IXoneObject): void;
+    protected LoadCompanyData(Company: XoneDataObject): void;
     GenerateEntIdOwner(): string;
     GenerateEntIdLevel(arg0: string): string;
     GenerateEntIdColl(arg0: string): string;
@@ -6141,7 +6141,7 @@ declare class XoneApplication implements IXoneApp {
     getAllowedUsers(): void;
     getCollectionCount(): number;
     getConnString(): void;
-    getCurrentEnterprise(): IXoneObject;
+    getCurrentEnterprise(): XoneDataObject;
     getFilesPath(): string;
     getReplicationId(): void;
     getReservedObject(): void;
@@ -6157,7 +6157,7 @@ declare class XoneApplication implements IXoneApp {
     writeConsoleString(param0: any): void;
 }
 `,ue=`
-declare class XoneDataObject implements IXoneObject {
+declare class XoneDataObject {
     get isDataObject(): boolean;
     private UNIQUE_ID;
     private static PARSE_NODE_NAME;
@@ -7095,19 +7095,19 @@ declare class XoneUI {
     writeString(): void;
 }
 
-`;window.MonacoEnvironment={getWorker:function(e,t){switch(t){case"css":return new K;case"javascript":return new W;default:return new H}}};const V=new DOMParser().parseFromString(re,"text/xml"),E={version:1.1,properties:[]};V.querySelectorAll("attribute").forEach(e=>{const t=e.getAttribute("name");E.properties.some(a=>a.name===t)||E.properties.push({name:t})});x.css.cssDefaults.setOptions({data:{useDefaultDataProvider:!1,dataProviders:[E]}});x.typescript.javascriptDefaults.setCompilerOptions({noLib:!0,allowNonTsExtensions:!0});x.typescript.javascriptDefaults.addExtraLib(`
+`;window.MonacoEnvironment={getWorker:function(e,t){switch(t){case"css":return new K;case"javascript":return new W;default:return new H}}};const V=new DOMParser().parseFromString(re,"text/xml"),E={version:1.1,properties:[]};V.querySelectorAll("attribute").forEach(e=>{const t=e.getAttribute("name");E.properties.some(a=>a.name===t)||E.properties.push({name:t})});x.css.cssDefaults.setOptions({data:{useDefaultDataProvider:!1,dataProviders:{cssData:E}}});x.typescript.javascriptDefaults.setCompilerOptions({noLib:!0,allowNonTsExtensions:!0});x.typescript.javascriptDefaults.addExtraLib(`
 	${le}
 	${ue}
 	${xe}
 	${me}
 	${ce}
 	
-	const self: XoneDataObject;
-	const appData: XoneApplication;
-	const user: XoneDataObject;
+	const self        : XoneDataObject;
+	const appData     : XoneApplication;
+	const user        : XoneDataObject;
+	const ui          : XoneUI;
 	const selfDataColl: XoneDataCollection;
-	const ui: XoneUI;
-	`,"global.d.ts");x.registerCompletionItemProvider("xml",{provideCompletionItems:(e,t)=>{const a=e.getValueInRange({startLineNumber:1,startColumn:1,endLineNumber:t.lineNumber,endColumn:t.column}),{tagName:s,isAttributeSearch:n}=be(a);if(s&&n){const i=V.querySelector(`element[name='${s}']`),o=[];return i==null||i.querySelectorAll("attribute").forEach(r=>{const l=r.getAttribute("name");o.some(b=>b.label===l)||o.push({preselect:!0,label:l,kind:x.CompletionItemKind.Snippet,documentation:l,insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:l+'="${1}"'})}),{suggestions:o}}return s==="script"&&!n?{suggestions:[]}:{suggestions:[{preselect:!0,label:"coll-node",kind:x.CompletionItemKind.Snippet,documentation:"coll",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<coll name="${1:collName}" special="${2:true}" >\n	\n</coll>'},{preselect:!0,label:"prop-node",kind:x.CompletionItemKind.Snippet,documentation:"prop",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<prop name="${1:propName}" type="${2:T}" title="${3:propTitle}" visible="${4:1}" />'},{preselect:!0,label:"contents-node",kind:x.CompletionItemKind.Snippet,documentation:"contents",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<contents name="${1:contentsName}" src="${2:srcName}" />'},{preselect:!0,label:"group-node",kind:x.CompletionItemKind.Snippet,documentation:"group",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<group name="${1:groupName}" id="${2:1}" >\n	\n</group>'},{preselect:!1,label:"frame-node",kind:x.CompletionItemKind.Snippet,documentation:"frame",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:`<frame name="\${1:frameName}" >
+	`,"global.d.ts");x.registerCompletionItemProvider("xml",{provideCompletionItems:(e,t)=>{const a=de(e,t);console.log(a);const{tagName:o,isAttributeSearch:n}=pe(a);if(o&&n){const i=V.querySelector(`element[name='${o}']`),s=[];return i==null||i.querySelectorAll("attribute").forEach(r=>{const l=r.getAttribute("name");s.some(C=>C.label===l)||s.push({preselect:!0,label:l,kind:x.CompletionItemKind.Snippet,documentation:l,insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:l+'="${1}"'})}),{suggestions:s}}return o==="script"&&!n?{suggestions:[]}:{suggestions:[{preselect:!0,label:"coll-node",kind:x.CompletionItemKind.Snippet,documentation:"coll",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<coll name="${1:collName}" special="${2:true}" >\n	\n</coll>'},{preselect:!0,label:"prop-node",kind:x.CompletionItemKind.Snippet,documentation:"prop",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<prop name="${1:propName}" type="${2:T}" title="${3:propTitle}" visible="${4:1}" />'},{preselect:!0,label:"contents-node",kind:x.CompletionItemKind.Snippet,documentation:"contents",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<contents name="${1:contentsName}" src="${2:srcName}" />'},{preselect:!0,label:"group-node",kind:x.CompletionItemKind.Snippet,documentation:"group",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<group name="${1:groupName}" id="${2:1}" >\n	\n</group>'},{preselect:!1,label:"frame-node",kind:x.CompletionItemKind.Snippet,documentation:"frame",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:`<frame name="\${1:frameName}" >
 	
 </frame>`},{preselect:!1,label:"param-node",kind:x.CompletionItemKind.Snippet,documentation:"param",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<param name="${1:paramName}" />'},{preselect:!1,label:"method-node",kind:x.CompletionItemKind.Snippet,documentation:"method",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:`<\${1:methodName}>
 	<action name="runscript">
@@ -7115,11 +7115,11 @@ declare class XoneUI {
 			\${2:// Script content...}
 		<\/script>
 	</action>
-</\${1:methodName}>`}]}}});const de=()=>{var t;return{automaticLayout:!0,fontSize:Number((t=localStorage.getItem("fontSize"))!=null?t:"14"),scrollBeyondLastLine:!0,padding:{top:16},minimap:{enabled:localStorage.getItem("minimap")!=="off"},theme:localStorage.getItem("theme")||"vs-dark"}},pe=(e,t)=>J.create(e,m({value:"",language:t},de()));function be(e){let t=e.match(/<\/*(?=\S*)([a-zA-Z-]+)/g);if(!t)return{tagName:null,isAttributeSearch:null};let a=[];for(let s=t.length-1;s>=0;s--)if(t[s].indexOf("</")===0)a.push(t[s].substring("</".length));else{let n=e.lastIndexOf(t[s]),i=t[s].substring("<".length);if(e.indexOf("/>",n)===-1){if(!a.length||a[a.length-1]!==i)return e=e.substring(n),{tagName:i,isAttributeSearch:e.indexOf("<")>e.indexOf(">")};a.splice(a.length-1,1)}e=e.substring(0,n)}return{tagName:null,isAttributeSearch:null}}var ge=Object.defineProperty,ye=Object.getOwnPropertyDescriptor,C=(e,t,a,s)=>{for(var n=s>1?void 0:s?ye(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&ge(t,a,n),n};let _=class extends h{constructor(){super();this.type="",this.editor=null}createRenderRoot(){return this}render(){return f`
+</\${1:methodName}>`}]}}});function de(e,t){return e.getValueInRange({startLineNumber:1,startColumn:1,endLineNumber:t.lineNumber,endColumn:t.column})}function pe(e){let t=e.match(/<\/*(?=\S*)([a-zA-Z-]+)/g);if(!t)return{tagName:null,isAttributeSearch:null};let a=[];for(let o=t.length-1;o>=0;o--)if(t[o].indexOf("</")===0)a.push(t[o].substring("</".length));else{let n=e.lastIndexOf(t[o]),i=t[o].substring("<".length);if(e.indexOf("/>",n)===-1){if(!a.length||a[a.length-1]!==i)return e=e.substring(n),{tagName:i,isAttributeSearch:e.indexOf("<")>e.indexOf(">")};a.splice(a.length-1,1)}e=e.substring(0,n)}return{tagName:null,isAttributeSearch:null}}const be=()=>{var t;return{automaticLayout:!0,fontSize:Number((t=localStorage.getItem("fontSize"))!=null?t:"14"),scrollBeyondLastLine:!0,padding:{top:16},minimap:{enabled:localStorage.getItem("minimap")!=="off"},theme:localStorage.getItem("theme")||"vs-dark"}},ge=(e,t)=>J.create(e,m({value:"",language:t},be()));var ye=Object.defineProperty,ve=Object.getOwnPropertyDescriptor,f=(e,t,a,o)=>{for(var n=o>1?void 0:o?ve(t,a):t,i=e.length-1,s;i>=0;i--)(s=e[i])&&(n=(o?s(t,a,n):s(n))||n);return o&&n&&ye(t,a,n),n};let v=class extends h{constructor(){super();this.type="",this.editor=null}createRenderRoot(){return this}render(){return _`
 			<div class="editor-container">
 				<div class="code-editor"></div>
 			</div>
-		`}firstUpdated(){this.createEditor()}async createEditor(){this.editor&&(this.editor.dispose(),await new Promise(e=>setTimeout(()=>e(!0),100))),this.editor=pe(this.editorElement,this.type),this.editor.setValue(this.editorValue),this.editor.onDidChangeModelContent(()=>this.onUpdate(this.editor.getValue()))}};C([d({type:String})],_.prototype,"type",2);C([d({type:String})],_.prototype,"editorValue",2);C([d({type:Function})],_.prototype,"onUpdate",2);C([Y(".code-editor")],_.prototype,"editorElement",2);_=C([A("code-editor")],_);var ve=Object.defineProperty,_e=Object.getOwnPropertyDescriptor,O=(e,t,a,s)=>{for(var n=s>1?void 0:s?_e(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&ve(t,a,n),n};let q=class extends h{constructor(){super(...arguments);this.url="http://localhost:8080/"}createRenderRoot(){return this}render(){return f`<iframe src="${this.url}#/preview?v=${this.urlParam}"></iframe>`}};O([d({type:String})],q.prototype,"url",2);O([d({type:String})],q.prototype,"urlParam",2);q=O([A("xone-preview")],q);var fe=Object.defineProperty,Ce=Object.getOwnPropertyDescriptor,F=(e,t,a,s)=>{for(var n=s>1?void 0:s?Ce(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&fe(t,a,n),n};let S=class extends h{createRenderRoot(){return this}render(){var e;return f` <div class="settings">
+		`}firstUpdated(){this.createEditor()}async createEditor(){this.editor&&(this.editor.dispose(),await new Promise(e=>setTimeout(()=>e(!0),100))),this.editor=ge(this.editorElement,this.type),this.editor.setValue(this.editorValue),this.editor.onDidChangeModelContent(()=>this.onUpdate(this.editor.getValue()))}};f([d({type:String})],v.prototype,"type",2);f([d({type:String})],v.prototype,"editorValue",2);f([d({type:Function})],v.prototype,"onUpdate",2);f([Y(".code-editor")],v.prototype,"editorElement",2);v=f([A("code-editor")],v);var _e=Object.defineProperty,fe=Object.getOwnPropertyDescriptor,O=(e,t,a,o)=>{for(var n=o>1?void 0:o?fe(t,a):t,i=e.length-1,s;i>=0;i--)(s=e[i])&&(n=(o?s(t,a,n):s(n))||n);return o&&n&&_e(t,a,n),n};let q=class extends h{constructor(){super(...arguments);this.url="http://localhost:8080/"}createRenderRoot(){return this}render(){return _`<iframe src="${this.url}#/preview?v=${this.urlParam}"></iframe>`}};O([d({type:String})],q.prototype,"url",2);O([d({type:String})],q.prototype,"urlParam",2);q=O([A("xone-preview")],q);var Ce=Object.defineProperty,Ae=Object.getOwnPropertyDescriptor,F=(e,t,a,o)=>{for(var n=o>1?void 0:o?Ae(t,a):t,i=e.length-1,s;i>=0;i--)(s=e[i])&&(n=(o?s(t,a,n):s(n))||n);return o&&n&&Ce(t,a,n),n};let S=class extends h{createRenderRoot(){return this}render(){var e;return _` <div class="settings">
 			<label for="resolutionWidth">Resolution width:</label>
 			<input
 				type="number"
@@ -7199,4 +7199,4 @@ declare class XoneUI {
 				<option value="on" selected>on</option>
 				<option value="off">off</option>
 			</select>
-		</div>`}updateSettings(e,t){switch(t){case"resolutionWidth":return this.onUpdate(g(m({},this.settings),{resolutionWidth:Number(e.value)}));case"resolutionHeight":return this.onUpdate(g(m({},this.settings),{resolutionHeight:Number(e.value)}));case"fontFactor":return this.onUpdate(g(m({},this.settings),{fontFactor:Number(e.value)}));case"webLayout":return this.onUpdate(g(m({},this.settings),{webLayout:e.value}));case"scaleFontsize":return this.onUpdate(g(m({},this.settings),{scaleFontsize:e.value}))}}reloadEditors(){document.querySelectorAll("code-editor").forEach(e=>e.createEditor())}};F([d({type:Object})],S.prototype,"settings",2);F([d({type:Function})],S.prototype,"onUpdate",2);S=F([A("xone-settings")],S);
+		</div>`}updateSettings(e,t){switch(t){case"resolutionWidth":return this.onUpdate(b(m({},this.settings),{resolutionWidth:Number(e.value)}));case"resolutionHeight":return this.onUpdate(b(m({},this.settings),{resolutionHeight:Number(e.value)}));case"fontFactor":return this.onUpdate(b(m({},this.settings),{fontFactor:Number(e.value)}));case"webLayout":return this.onUpdate(b(m({},this.settings),{webLayout:e.value}));case"scaleFontsize":return this.onUpdate(b(m({},this.settings),{scaleFontsize:e.value}))}}reloadEditors(){document.querySelectorAll("code-editor").forEach(e=>e.createEditor())}};F([d({type:Object})],S.prototype,"settings",2);F([d({type:Function})],S.prototype,"onUpdate",2);S=F([A("xone-settings")],S);

@@ -1629,6 +1629,34 @@ var M=Object.defineProperty,U=Object.defineProperties;var G=Object.getOwnPropert
               </xs:documentation>
             </xs:annotation>
           </xs:attribute>
+			<xs:attribute name="tpadding"
+                    type="xs:string"
+                    use="optional">
+        <xs:annotation>
+          <xs:documentation xml:lang="es">Indica el padding superior.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="rpadding"
+               type="xs:string"
+               use="optional">
+        <xs:annotation>
+          <xs:documentation xml:lang="es">Indica el padding derecho.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="bpadding"
+               type="xs:string"
+               use="optional">
+        <xs:annotation>
+          <xs:documentation xml:lang="es">Indica el padding inferior.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="lpadding"
+         type="xs:string"
+         use="optional">
+        <xs:annotation>
+          <xs:documentation xml:lang="es">Indica el padding izquierdo.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
           <xs:attribute name="contents"
                    type="xs:string"
                    use="optional">

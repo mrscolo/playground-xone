@@ -1,6 +1,6 @@
-var V=Object.defineProperty,k=Object.defineProperties;var U=Object.getOwnPropertyDescriptors;var P=Object.getOwnPropertySymbols;var M=Object.prototype.hasOwnProperty,G=Object.prototype.propertyIsEnumerable;var w=(e,t,a)=>t in e?V(e,t,{enumerable:!0,configurable:!0,writable:!0,value:a}):e[t]=a,m=(e,t)=>{for(var a in t||(t={}))M.call(t,a)&&w(e,a,t[a]);if(P)for(var a of P(t))G.call(t,a)&&w(e,a,t[a]);return e},g=(e,t)=>k(e,U(t));import{p as X,e as B,t as y,n as A,s as q,d as h,a as T,b as f,W as z,c as $,f as W,l as x,g as H,h as d,i as K}from"./vendor.621e38c1.js";const Y=function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))s(n);new MutationObserver(n=>{for(const i of n)if(i.type==="childList")for(const o of i.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&s(o)}).observe(document,{childList:!0,subtree:!0});function a(n){const i={};return n.integrity&&(i.integrity=n.integrity),n.referrerpolicy&&(i.referrerPolicy=n.referrerpolicy),n.crossorigin==="use-credentials"?i.credentials="include":n.crossorigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function s(n){if(n.ep)return;n.ep=!0;const i=a(n);fetch(n.href,i)}};Y();String.prototype.compress=function(e){e=e===!0;var t,a={},s=this,n,i,o="",r=[],l="",b=256;for(t=0;t<256;t+=1)a[String.fromCharCode(t)]=t;for(t=0;t<s.length;t+=1)n=s.charAt(t),i=o+n,a.hasOwnProperty(i)?o=i:(r.push(a[o]),l+=String.fromCharCode(a[o]),a[i]=b++,o=String(n));return o!==""&&(r.push(a[o]),l+=String.fromCharCode(a[o])),e?r:l};String.prototype.decompress=function(){var e,t=[],a=[],s=this,n,i,o,r="",l=256;for(e=0;e<256;e+=1)a[e]=String.fromCharCode(e);if(s&&typeof s=="string"){for(e=0;e<s.length;e+=1)t.push(s[e].charCodeAt(0));s=t,t=null}for(n=String.fromCharCode(s[0]),i=n,e=1;e<s.length;e+=1){if(o=s[e],a[o])r=a[o];else if(o===l)r=n+n.charAt(0);else return null;i+=r,a[l++]=n+r.charAt(0),n=r}return i};const Q=()=>["createObject","currentItem","deleteItem","deleteObject","executeNode","findObject","get","getCollection","getContents","getCurrentItem","getItem","getText","hasSomething","loadAll","loadFromJson","loadFromJsonArray","moveFirst","moveLast","moveNext","movePrev","msgBox","msgBoxWithSound","pickFile","save","setText","sleep","startBrowse","startCamera","startGps","startGpsV1","startGpsV2"];let v;const J=["body","expression","declarations","init","callee","object","argument","arguments","right"],Z=()=>v=Q(),ee=new DOMParser;function te(e,t){try{if(!t)return e;ee.parseFromString(`<root>${e}</root>`,"text/xml").querySelectorAll("action > script").forEach(s=>e=e.replace(s.textContent,`
-`+R(s.textContent)))}catch{}finally{return e}}function ne(e,t){try{return t?(Z(),R(e)):e}catch{return e}}function R(e){try{const t=e;let a=t;try{t.match(/'([^']+)'/).forEach(o=>{a=a.replace(o,o.split(`
-`).join("~~"))})}catch{}const s=X(a,{ecmaVersion:2022}),n=(o,r,l=!1)=>{var O,D,I,j;((O=o.type)==null?void 0:O.includes("Function"))&&r.push(o),J.forEach(u=>{!o[u]||n(o[u],r,l)}),r=r.filter(u=>u!==o),o instanceof Array&&o.forEach(u=>{n(u,r,l)});const b=((D=o.callee)==null?void 0:D.name)||((j=(I=o.callee)==null?void 0:I.property)==null?void 0:j.name);if(!(!b||!v.includes(b)))if(l){if(r.length===0)return;const{name:u}=r[0].id;v.includes(u)||v.push(u)}else{const u=m({},o);o.type="AwaitExpression",o.argument=u,r.forEach(L=>L.async=!0)}};let i;do i=v.length,s.body.forEach(o=>n(o,[],!0));while(i!==v.length);return s.body.forEach(o=>n(o,[])),B.generate(s)}catch{return""}}var ae=Object.defineProperty,oe=Object.getOwnPropertyDescriptor,p=(e,t,a,s)=>{for(var n=s>1?void 0:s?oe(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&ae(t,a,n),n};let c=class extends q{constructor(){super();this.xmlString="",this.cssString="",this.jsString="",this.urlParam="",this.settings={resolutionWidth:-1,resolutionHeight:-1,webLayout:"",scaleFontsize:"false",fontFactor:5},this.isSettingsOpened=!1,this.initEditorValues()}createRenderRoot(){return this}initEditorValues(){try{const{hash:e}=window.location,[t,a,s,n,i,o,r,l]=e.split(e.includes("%7C")?"%7C":"|");if(t&&(this.xmlString=h(t).decompress()),a&&(this.cssString=h(a).decompress()),s&&(this.jsString=h(s).decompress()),n)try{this.settings.resolutionWidth=Number(n)}catch{}i&&(this.settings.resolutionHeight=Number(i)),o&&(this.settings.webLayout=h(o.decompress())),r&&(this.settings.scaleFontsize=r),l&&(this.settings.fontFactor=Number(l))}catch{}}reloadPreview(){var a;this.updateUrl(!0);const e=document.querySelector("xone-preview");e&&((a=e.parentElement)==null||a.removeChild(e));const t=document.getElementById("editor-panel");t.innerHTML=`<xone-preview url="https://mrscolo.github.io/xone-framework/" urlParam=${this.urlParam}></xone-preview>`}updated(e){!e.has("xmlString")&&!e.has("cssString")&&!e.has("jsString")||!this.xmlString&&!this.cssString&&!this.jsString||(this.updateUrl(!1),this.updateTimeout&&clearTimeout(this.updateTimeout),this.updateTimeout=setTimeout(()=>this.reloadPreview(),document.querySelector("xone-preview")?2500:0))}updateUrl(e){const{resolutionWidth:t,resolutionHeight:a,webLayout:s,scaleFontsize:n,fontFactor:i}=this.settings,o=ne(this.jsString,e),r=te(this.xmlString,e);let l=`${T(r.compress())}|${T(this.cssString.compress())}|${T(o.compress())}`;l+=`|${t.toString()}|${a.toString()}|${T(s.toString().compress())}`,l+=`|${n}|${i}`,e?this.urlParam=l:window.location.hash=l}render(){return f`
+var V=Object.defineProperty,k=Object.defineProperties;var M=Object.getOwnPropertyDescriptors;var j=Object.getOwnPropertySymbols;var U=Object.prototype.hasOwnProperty,G=Object.prototype.propertyIsEnumerable;var L=(e,t,a)=>t in e?V(e,t,{enumerable:!0,configurable:!0,writable:!0,value:a}):e[t]=a,m=(e,t)=>{for(var a in t||(t={}))U.call(t,a)&&L(e,a,t[a]);if(j)for(var a of j(t))G.call(t,a)&&L(e,a,t[a]);return e},g=(e,t)=>k(e,M(t));import{p as X,e as B,t as y,n as A,s as h,d as N,a as T,b as f,W as z,c as $,f as H,l as x,g as W,h as d,i as K}from"./vendor.621e38c1.js";const J=function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))s(n);new MutationObserver(n=>{for(const i of n)if(i.type==="childList")for(const o of i.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&s(o)}).observe(document,{childList:!0,subtree:!0});function a(n){const i={};return n.integrity&&(i.integrity=n.integrity),n.referrerpolicy&&(i.referrerPolicy=n.referrerpolicy),n.crossorigin==="use-credentials"?i.credentials="include":n.crossorigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function s(n){if(n.ep)return;n.ep=!0;const i=a(n);fetch(n.href,i)}};J();String.prototype.compress=function(e){e=e===!0;var t,a={},s=this,n,i,o="",r=[],l="",b=256;for(t=0;t<256;t+=1)a[String.fromCharCode(t)]=t;for(t=0;t<s.length;t+=1)n=s.charAt(t),i=o+n,a.hasOwnProperty(i)?o=i:(r.push(a[o]),l+=String.fromCharCode(a[o]),a[i]=b++,o=String(n));return o!==""&&(r.push(a[o]),l+=String.fromCharCode(a[o])),e?r:l};String.prototype.decompress=function(){var e,t=[],a=[],s=this,n,i,o,r="",l=256;for(e=0;e<256;e+=1)a[e]=String.fromCharCode(e);if(s&&typeof s=="string"){for(e=0;e<s.length;e+=1)t.push(s[e].charCodeAt(0));s=t,t=null}for(n=String.fromCharCode(s[0]),i=n,e=1;e<s.length;e+=1){if(o=s[e],a[o])r=a[o];else if(o===l)r=n+n.charAt(0);else return null;i+=r,a[l++]=n+r.charAt(0),n=r}return i};const Y=()=>["createObject","currentItem","deleteItem","deleteObject","executeNode","findObject","get","getCollection","getContents","getCurrentItem","getItem","getText","hasSomething","loadAll","loadFromJson","loadFromJsonArray","moveFirst","moveLast","moveNext","movePrev","msgBox","msgBoxWithSound","pickFile","save","setText","sleep","startBrowse","startCamera","startGps","startGpsV1","startGpsV2"];let v;const Q=["body","expression","declarations","init","callee","object","argument","arguments","right"],Z=()=>v=Y(),ee=new DOMParser;function te(e,t){try{if(!t)return e;ee.parseFromString(`<root>${e}</root>`,"text/xml").querySelectorAll("action > script").forEach(s=>e=e.replace(s.textContent,`
+`+w(s.textContent)))}catch{}finally{return e}}function ne(e,t){try{return t?(Z(),w(e)):e}catch{return e}}function w(e){try{const t=e;let a=t;try{t.match(/'([^']+)'/).forEach(o=>{a=a.replace(o,o.split(`
+`).join("~~"))})}catch{}const s=X(a,{ecmaVersion:2022}),n=(o,r,l=!1)=>{var F,D,I,P;((F=o.type)==null?void 0:F.includes("Function"))&&r.push(o),Q.forEach(u=>{!o[u]||n(o[u],r,l)}),r=r.filter(u=>u!==o),o instanceof Array&&o.forEach(u=>{n(u,r,l)});const b=((D=o.callee)==null?void 0:D.name)||((P=(I=o.callee)==null?void 0:I.property)==null?void 0:P.name);if(!(!b||!v.includes(b)))if(l){if(r.length===0)return;const{name:u}=r[0].id;v.includes(u)||v.push(u)}else{const u=m({},o);o.type="AwaitExpression",o.argument=u,r.forEach(R=>R.async=!0)}};let i;do i=v.length,s.body.forEach(o=>n(o,[],!0));while(i!==v.length);return s.body.forEach(o=>n(o,[])),B.generate(s)}catch{return""}}var ae=Object.defineProperty,oe=Object.getOwnPropertyDescriptor,p=(e,t,a,s)=>{for(var n=s>1?void 0:s?oe(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&ae(t,a,n),n};let c=class extends h{constructor(){super();this.xmlString="",this.cssString="",this.jsString="",this.urlParam="",this.settings={resolutionWidth:-1,resolutionHeight:-1,webLayout:"",scaleFontsize:"false",fontFactor:5},this.isSettingsOpened=!1,this.initEditorValues()}createRenderRoot(){return this}initEditorValues(){try{const{hash:e}=window.location,[t,a,s,n,i,o,r,l]=e.split(e.includes("%7C")?"%7C":"|");if(t&&(this.xmlString=N(t).decompress()),a&&(this.cssString=N(a).decompress()),s&&(this.jsString=N(s).decompress()),n)try{this.settings.resolutionWidth=Number(n)}catch{}i&&(this.settings.resolutionHeight=Number(i)),o&&(this.settings.webLayout=N(o.decompress())),r&&(this.settings.scaleFontsize=r),l&&(this.settings.fontFactor=Number(l))}catch{}}reloadPreview(){var a;this.updateUrl(!0);const e=document.querySelector("xone-preview");e&&((a=e.parentElement)==null||a.removeChild(e));const t=document.getElementById("editor-panel");t.innerHTML=`<xone-preview url="https://mrscolo.github.io/xone-framework/" urlParam=${this.urlParam}></xone-preview>`}updated(e){!e.has("xmlString")&&!e.has("cssString")&&!e.has("jsString")||!this.xmlString&&!this.cssString&&!this.jsString||(this.updateUrl(!1),this.updateTimeout&&clearTimeout(this.updateTimeout),this.updateTimeout=setTimeout(()=>this.reloadPreview(),document.querySelector("xone-preview")?2500:0))}updateUrl(e){const{resolutionWidth:t,resolutionHeight:a,webLayout:s,scaleFontsize:n,fontFactor:i}=this.settings,o=ne(this.jsString,e),r=te(this.xmlString,e);let l=`${T(r.compress())}|${T(this.cssString.compress())}|${T(o.compress())}`;l+=`|${t.toString()}|${a.toString()}|${T(s.toString().compress())}`,l+=`|${n}|${i}`,e?this.urlParam=l:window.location.hash=l}render(){return f`
 			<div class="main-layout">
 				<!-- XOne image -->
 				<div style="position:absolute;z-index:1;bottom:25px;left:100px;opacity:.2;">
@@ -6624,147 +6624,455 @@ declare class XoneDataObject implements IXoneObject {
     setFollowRules(value: boolean): void;
 }
 `,xe=`
+declare class XoneView {
+    /**
+     * constructor
+     * @param {XoneDataObject} xoneDataObject
+     */
+    constructor(xoneDataObject: XoneDataObject);
+    /**
+     * bindedEvents
+     * @type {Array<object>}
+     */
+    _bindedEvents: Array<object>;
+    /**
+     * @type {XoneDataObject}
+     */
+    _xoneDataObject: XoneDataObject;
+    get bindedEvents(): any[];
+    /**
+     * addControl
+     * @param {XoneControl} control
+     */
+    addControl(control: XoneControl): void;
+    getXoneDataObject(): XoneDataObject;
+    /**
+     * Bind event
+     * @param  {...string} Args
+     */
+    bind(...Args: string[]): void;
+    /**
+     * exit current view
+     */
+    exit(): void;
+    /**
+     * Refresh
+     * @param  {...any} Props
+     */
+    refresh(...Props: any[]): void;
+    /**
+     * Refresh All
+     */
+    refreshAll(): void;
+    /**
+     * refreshValue
+     * @param {*} Props
+     */
+    refreshValue: (Props: any) => void;
+}
+declare class XoneControl {
+    /**
+     * constructor
+     * @param {string} name
+     * @param {HTMLElement} [element]
+     */
+    constructor(name: string, element?: HTMLElement);
+    /**
+     * @type {string}
+     */
+    name: string;
+    /**
+     * @type {HTMLElement}
+     */
+    element: HTMLElement;
+    refresh: () => void;
+    refreshValue: () => void;
+}
+`,ue=`
+/**
+ * Types Definitions
+ */
+type SnackBarParams = {
+    color?: string;
+    duration?: 'short' | 'long' | 'indeterminate' | 'indefinite';
+    width?: string;
+    height?: string;
+    text?: string;
+    textColor?: string;
+    actionText?: string;
+    actionTextColor?: string;
+    actionMethod?: Function;
+};
 declare class XoneUI {
-constructor: (): void
-addCalendarItem: (...args: any[]): void
-askUserForGPSPermission: (...args: any[]): void
-canMakePhoneCall: (...args: any[]): void
-captureImage: (...args: any[]): void
-checkGPSStatus: (...args: any[]): void
-clearDrawing: (...args: any[]): void
-createShortcut: (...args: any[]): void
-deleteShortcut: (...args: any[]): void
-dismissNotification: (...args: any[]): void
-drawMapRoute: (...args: any[]): void
-endPrint: (...args: any[]): void
-ensureVisible: (...args: any[]): void
-executeActionAfterDelay: (...args: any[]): void
-executeMethodAfterDelay: (...args: any[]): void
-exit: (...args: any[]): void
-exitApp: (...args: any[]): void
-getLastKnownLocation: (...args: any[]): void
-getLastKnownLocationAccuracy: (...args: any[]): void
-getLastKnownLocationAltitude: (...args: any[]): void
-getLastKnownLocationBearing: (...args: any[]): void
-getLastKnownLocationDateTime: (...args: any[]): void
-getLastKnownLocationLatitude: (...args: any[]): void
-getLastKnownLocationLongitude: (...args: any[]): void
-getLastKnownLocationProvider: (...args: any[]): void
-getLastKnownLocationSpeed: (...args: any[]): void
-getMaxSoundVolumen: (...args: any[]): void
-getSoundVolumen: (...args: any[]): void
-getView: (...args: any[]): void
-hideGroup: (...args: any[]): void
-hideLoader: (...args: any[]): void
-hideNavigationDrawer: (...args: any[]): void
-hideSoftwareKeyboard: (...args: any[]): void
-hideWaitDialog: (...args: any[]): void
-injectJavascript: (...args: any[]): void
-isApplicationInstalled: (...args: any[]): void
-isOnCall: (...args: any[]): void
-isSuperuserAvailable: (...args: any[]): void
-isTaskKillerInstalled: (...args: any[]): void
-isWifiConnected: (...args: any[]): void
-isWifiEnabled: (...args: any[]): void
-launchApp: (...args: any[]): void
-launchApplication: (...args: any[]): void
-launchEntryPoint: (...args: any[]): void
-lineFeed: (...args: any[]): void
-lockGroup: (...args: any[]): void
-login: (...args: any[]): void
-makePhoneCall: (...args: any[]): void
-msgBox: (...args: any[]): void
-msgBoxWithSound: (...args: any[]): void
-openEditView: (...args: any[]): void
-openEditViewAndExit: (...args: any[]): void
-openFile: (...args: any[]): void
-openMenu: (...args: any[]): void
-openUrl: (...args: any[]): void
-pickFile: (...args: any[]): void
-playSound: (...args: any[]): void
-playSoundAndVibrate: (...args: any[]): void
-playSoundVolumen: (...args: any[]): void
-print: (...args: any[]): void
-printBIDI: (...args: any[]): void
-printBarcode: (...args: any[]): void
-printCommand: (...args: any[]): void
-printImage: (...args: any[]): void
-printLine: (...args: any[]): void
-printPDF: (...args: any[]): void
-quitApp: (...args: any[]): void
-recognizeSpeech: (...args: any[]): void
-refresh: (...args: any[]): void
-refreshAll: (...args: any[]): void
-refreshContentRow: (...args: any[]): void
-refreshContentSelectedRow: (...args: any[]): void
-refreshValue: (...args: any[]): void
-relayout: (...args: any[]): void
-restartApp: (...args: any[]): void
-returnToForeground: (...args: any[]): void
-returnToMainMenu: (...args: any[]): void
-saveDrawing: (...args: any[]): void
-sendMail: (...args: any[]): void
-sendSMS: (...args: any[]): void
-setFeedMode: (...args: any[]): void
-setLanguage: (...args: any[]): void
-setMaxWaitDialog: (...args: any[]): void
-setNotificationLed: (...args: any[]): void
-setSelection: (...args: any[]): void
-shareData: (...args: any[]): void
-showConsoleReplica: (...args: any[]): void
-showDatePicker: (...args: any[]): void
-showGroup: (...args: any[]): void
-showLoader: (...args: any[]): void
-showNavigationDrawer: (...args: any[]): void
-showNotification: (...args: any[]): void
-showSnackbar: (...args: any[]): void
-showSoftwareKeyboard: (...args: any[]): void
-showToast: (...args: any[]): void
-showWaitDialog: (...args: any[]): void
-signDataObject: (...args: any[]): void
-sleep: (...args: any[]): void
-speak: (...args: any[]): void
-speakText: (...args: any[]): void
-startAudioRecord: (...args: any[]): void
-startCamera: (...args: any[]): void
-startGps: (...args: any[]): void
-startGpsV1: (...args: any[]): void
-startGpsV2: (...args: any[]): void
-startKioskMode: (...args: any[]): void
-startPrint: (...args: any[]): void
-startReplica: (...args: any[]): void
-startScanner: (...args: any[]): void
-startSignature: (...args: any[]): void
-startWifi: (...args: any[]): void
-stopAudioRecord: (...args: any[]): void
-stopGps: (...args: any[]): void
-stopGpsV1: (...args: any[]): void
-stopGpsV2: (...args: any[]): void
-stopKioskMode: (...args: any[]): void
-stopPlaySoundAndVibrate: (...args: any[]): void
-stopReplica: (...args: any[]): void
-stopWifi: (...args: any[]): void
-takePhoto: (...args: any[]): void
-toggleGroup: (...args: any[]): void
-uninstallApplication: (...args: any[]): void
-unlockGroup: (...args: any[]): void
-updateWaitDialog: (...args: any[]): void
-uploadFile: (...args: any[]): void
-useLastPrinter: (...args: any[]): void
-vibrate: (...args: any[]): void
-writeString: (...args: any[]): void
-}`;window.MonacoEnvironment={getWorker:function(e,t){switch(t){case"css":return new W;case"javascript":return new $;default:return new z}}};const ue=()=>{var t;return{automaticLayout:!0,fontSize:Number((t=localStorage.getItem("fontSize"))!=null?t:"14"),scrollBeyondLastLine:!0,padding:{top:16},minimap:{enabled:localStorage.getItem("minimap")!=="off"},theme:localStorage.getItem("theme")||"vs-dark"}},me=new DOMParser().parseFromString(se,"text/xml");x.typescript.javascriptDefaults.addExtraLib(`
+    /**
+     * @type {XoneUI}
+     */
+    static _instance: XoneUI;
+    addCalendarItem(title: any, description: any, location: any, dtStart: any, dtEnd: any): void;
+    askUserForGPSPermission(): void;
+    canMakePhoneCall(): void;
+    captureImage(PropName: any, CaptureObjectName: any): void;
+    checkGPSStatus(): void;
+    /**
+     * clearDrawing
+     * @param {string} PropName
+     */
+    clearDrawing(PropName: string): void;
+    createShortcut(): void;
+    deleteShortcut(): void;
+    /**
+     * dismissNotification
+     * @param {string} id
+     */
+    dismissNotification(id: string): void;
+    drawMapRoute(PropName: any, DestinationLatitude: any, DestinationLongitude: any, SourceLatitude: any, SourceLongitude: any, Mode: any, StrokeColor: any): void;
+    endPrint(): void;
+    ensureVisible(Prop: any, type: any): void;
+    /**
+     * executeMethodAfterDelay
+     * @param {string} NodeName
+     * @param {number} [delay]
+     */
+    executeActionAfterDelay(NodeName: string, delay?: number): void;
+    /**
+     * executeMethodAfterDelay
+     * @param {string} NodeName
+     * @param {number} [delay]
+     */
+    executeMethodAfterDelay(NodeName: string, delay?: number): void;
+    /**
+     * Go to previus object in stack
+     */
+    exit(): void;
+    /**
+     * Exit  App
+     */
+    exitApp(): void;
+    /**
+     * getLastKnownLocation
+     */
+    getLastKnownLocation(): {
+        latitude: any;
+        longitude: any;
+    };
+    /**
+     * getLastKnownLocationAccuracy
+     */
+    getLastKnownLocationAccuracy(): any;
+    /**
+     * getLastKnownLocationAltitude
+     */
+    getLastKnownLocationAltitude(): any;
+    /**
+     * getLastKnownLocationBearing
+     */
+    getLastKnownLocationBearing(): any;
+    /**
+     * getLastKnownLocationDateTime
+     */
+    getLastKnownLocationDateTime(): string;
+    /**
+     * getLastKnownLocationLatitude
+     */
+    getLastKnownLocationLatitude(): any;
+    /**
+     * getLastKnownLocationLongitude
+     */
+    getLastKnownLocationLongitude(): any;
+    /**
+     * getLastKnownLocationProvider
+     */
+    getLastKnownLocationProvider(): "geolocation" | "";
+    /**
+     * getLastKnownLocationSpeed
+     */
+    getLastKnownLocationSpeed(): any;
+    getMaxSoundVolumen(): void;
+    getSoundVolumen(): void;
+    /**
+     * getView
+     * @param {XoneDataObject} DataObject
+     */
+    getView(DataObject: XoneDataObject): XoneView;
+    /**
+     * 
+     * Hide Group
+     * @param {string|number} groupId
+     */
+    hideGroup(groupId: string | number): void;
+    /**
+     * Hide loader spinner
+     */
+    hideLoader(): Promise<void>;
+    hideNavigationDrawer(): void;
+    hideSoftwareKeyboard(): void;
+    hideWaitDialog(): void;
+    injectJavascript(WebViewPropName: any, ScriptText: any): void;
+    isApplicationInstalled(packageName: any): void;
+    isOnCall(): void;
+    isSuperuserAvailable(): void;
+    isTaskKillerInstalled(): void;
+    isWifiConnected(): void;
+    isWifiEnabled(): void;
+    launchApp(PackageName: any, ExtrasParam: any): void;
+    launchApplication(PackageName: any, ExtrasParam: any): void;
+    /**
+     * Launch entry point
+     * @param {boolean} [isOnlyWebLayout]
+     */
+    launchEntryPoint(isOnlyWebLayout?: boolean): Promise<void>;
+    lineFeed(Lines: any): void;
+    lockGroup(groupId: any): void;
+    /**
+     * login
+     * Login para appData.failWithMessage(-11888,"##LOGIN_START##")
+     * habr\xE1 que deprecarlo alg\xFAn d\xEDa pero se usa mucho
+     * @returns {Promise}
+     */
+    login(): Promise<any>;
+    makePhoneCall(PhoneNumber: any): void;
+    /**
+     * Show MsgBox
+     * @param {string|XoneDataObject} message
+     * @param {string} [title]
+     * @param {number} [flags]
+     * @returns {Promise<number>}
+     */
+    msgBox(message: string | XoneDataObject, title?: string, flags?: number): Promise<number>;
+    msgBoxWithSound(Message: any, Title: any, type: any, Sound: any, Vibrate: any, NumberRepeat: any): Promise<number>;
+    /**
+     * Open new Edit View and push it in Breadcrumbs stack
+     * @param {XoneDataObject|string} param
+     */
+    openEditView(param: XoneDataObject | string): Promise<void>;
+    /**
+     * Open new Edit View and push it in Breadcrumbs stack then 1
+     * @param {XoneDataObject|string} param
+     */
+    openEditViewAndExit(param: XoneDataObject | string): Promise<void>;
+    /**
+     * openFile
+     * @param {string} filePath
+     */
+    openFile(filePath: string): void;
+    openMenu(Name: any, Mask: any, Mode: any): void;
+    /**
+     * Open Url
+     * @param {string} Url
+     * @returns {void}
+     */
+    openUrl(Url: string): void;
+    /**
+     * pickFile
+     * @param {string|object} PropName
+     * @param {string} Extensions
+     * @returns {Promise<string>}
+     */
+    pickFile(PropName: string | object, Extensions: string): Promise<string>;
+    /**
+     * playSound
+     * @param {string} sound
+     * @returns {Promise<void>}
+     */
+    playSound(sound: string): Promise<void>;
+    /**
+     * playSoundAndVibrate
+     * @param {string} Sounds
+     * @param {*} vibrate
+     * @param {*} NumberRepeat
+     * @param {*} ContinuePlaying
+     * @returns {Promise<void>}
+     */
+    playSoundAndVibrate(Sounds: string, vibrate: any, NumberRepeat: any, ContinuePlaying: any): Promise<void>;
+    playSoundVolumen(Number: any): void;
+    print(Data: any): void;
+    printBIDI(Size: any, Level: any, Data: any): void;
+    printBarcode(Type: any, Data: any, Width: any, Height: any): void;
+    printCommand(Data: any): void;
+    printImage(Path: any, Width: any, Height: any, Align: any, Dither: any): void;
+    printLine(Data: any): void;
+    printPDF(Path: any, PageNumber: any): void;
+    /**
+     * quitApp
+     */
+    quitApp(): void;
+    /**
+     * recognizeSpeech
+     * @param {XoneDataObject|Object} DataObject
+     * @param {string} [PropName]
+     */
+    recognizeSpeech(DataObject: XoneDataObject | any, PropName?: string): void;
+    /**
+     * Refresh controls
+     * @param {Array} Props
+     */
+    refresh(...Props: any[]): void;
+    /**
+     * refreshAll
+     */
+    refreshAll(): void;
+    /**
+     * refreshContentRow
+     * @param {string} ContentName
+     * @param {number} Row
+     */
+    refreshContentRow(ContentName: string, Row: number): void;
+    /**
+     * refreshContentSelectedRow
+     * @param {string} ContentName
+     */
+    refreshContentSelectedRow(ContentName: string): void;
+    /**
+     * refreshValue
+     * @param {string} Props
+     */
+    refreshValue(Props: string): void;
+    relayout(): void;
+    restartApp(): void;
+    returnToForeground(): void;
+    returnToMainMenu(): void;
+    saveDrawing(PropName: any, FileName: any): void;
+    sendMail(To: any, Cc: any, Subject: any, Message: any, Attachments: any): void;
+    sendSMS(Phone: any, Text: any): void;
+    setFeedMode(FeedMode: any): void;
+    setLanguage(Language: any): void;
+    setMaxWaitDialog(Max: any): void;
+    setNotificationLed(LedColor: any, LedOn: any, LedOff: any): void;
+    setSelection(Prop: any, Position: any): void;
+    shareData(Subject: any, Text: any, image: any): void;
+    showConsoleReplica(): void;
+    showDatePicker(JSONObject: any): void;
+    /**
+     * Show Group
+     * @param {string|number} groupId
+     * @param {*} [animationIn]
+     * @param {*} [animationInDuration]
+     * @param {*} [animationOut]
+     * @param {*} [animationOutDuration]
+     */
+    showGroup(groupId: string | number, animationIn?: any, animationInDuration?: any, animationOut?: any, animationOutDuration?: any): void;
+    /**
+     * Show Spinner loader
+     */
+    showLoader(): Promise<void>;
+    showNavigationDrawer(Orientation: any): void;
+    /**
+     * showNotification
+     * @param {string} id
+     * @param {string} Title
+     * @param {string} Text
+     * @param {*} [TextStatusBar]
+     * @param {XoneDataObject | Function} [obj]
+     * @param {*} [NodeName]
+     */
+    showNotification(id: string, Title: string, Text: string, TextStatusBar?: any, obj?: XoneDataObject | Function, NodeName?: any): void;
+    /**
+     * Show Toast
+     * @param {SnackBarParams} params
+     */
+    showSnackbar(params: SnackBarParams): void;
+    showSoftwareKeyboard(): void;
+    /**
+     * Show Toast
+     * @param {string} message
+     */
+    showToast(message: string): void;
+    showWaitDialog(Text: any): void;
+    signDataObject(Data: any, Mask: any): void;
+    /**
+     * sleep
+     * @param {number} Seconds
+     */
+    sleep(Seconds: number): Promise<void>;
+    /**
+     * speak
+     * @param {string} Language
+     * @param {string} Text
+     */
+    speak(Language: string, Text: string): void;
+    /**
+     * speakText
+     * @param {string} Text
+     */
+    speakText(Text: string): void;
+    startAudioRecord(NodeName: any, Prop: any, TimeOut: any): void;
+    /**
+     * startCamera
+     * @param {string} PropName
+     * @param {string} type
+     */
+    startCamera(PropName: string, type?: string): Promise<void>;
+    /**
+     * startGps
+     * @param {*} JSONObject
+     * @param {*} Interval
+     * @param {*} Flags
+     */
+    startGps(JSONObject: any, Interval: any, Flags: any): Promise<void>;
+    _startGpsTimeout: NodeJS.Timeout;
+    /**
+     * startGpsV1
+     */
+    startGpsV1(): Promise<void>;
+    /**
+     * startGpsV2
+     * @param {*} JSONObject
+     * @param {*} Interval
+     * @param {*} Flags
+     */
+    startGpsV2(JSONObject: any, Interval: any, Flags: any): Promise<void>;
+    startKioskMode(): void;
+    startPrint(PrinterType: any): void;
+    startReplica(): void;
+    startScanner(NativeObject: any, Codes: any, Target: any): void;
+    startSignature(Prop: any, Width: any, Height: any, BackgroundImage: any, ScreenOrientation: any): void;
+    startWifi(): void;
+    stopAudioRecord(): void;
+    stopGps(): void;
+    stopGpsV1(): void;
+    stopGpsV2(): void;
+    stopKioskMode(): void;
+    stopPlaySoundAndVibrate(): void;
+    stopReplica(): void;
+    stopWifi(): void;
+    /**
+     * Take photo
+     * @param {*} FileName
+     * @param {*} Width
+     * @param {*} Height
+     */
+    takePhoto(FileName: any, Width: any, Height: any): void;
+    /**
+     * Toogle Group
+     * @param {string|number} groupId
+     */
+    toggleGroup(groupId: string | number): void;
+    uninstallApplication(packageName: any): void;
+    unlockGroup(groupId: any): void;
+    updateWaitDialog(message: any, value: any): void;
+    /**
+     * @param {Blob} file
+     * @returns {Promise<string>}
+     */
+    uploadFile(file: Blob): Promise<string>;
+    useLastPrinter(True: any): void;
+    vibrate(): void;
+    writeString(): void;
+}
+
+`;window.MonacoEnvironment={getWorker:function(e,t){switch(t){case"css":return new H;case"javascript":return new $;default:return new z}}};const me=()=>{var t;return{automaticLayout:!0,fontSize:Number((t=localStorage.getItem("fontSize"))!=null?t:"14"),scrollBeyondLastLine:!0,padding:{top:16},minimap:{enabled:localStorage.getItem("minimap")!=="off"},theme:localStorage.getItem("theme")||"vs-dark"}},ce=new DOMParser().parseFromString(se,"text/xml");x.typescript.javascriptDefaults.addExtraLib(`
 	${ie}
 	${le}
 	${re}
 	${xe}
+	${ue}
 	
 	var appData = new XoneApplication();
 	var self = new XoneDataObject();
 	var user = new XoneDataObject();
 	var selfDataColl = new XoneDataCollection();
 	var ui = new XoneUI();
-	`,"global.d.ts");x.registerCompletionItemProvider("xml",{provideCompletionItems:(e,t)=>{console.log(e),console.log(t);const a=e.getValueInRange({startLineNumber:1,startColumn:1,endLineNumber:t.lineNumber,endColumn:t.column}),{tagName:s,isAttributeSearch:n}=de(a);if(s&&n){const i=me.querySelector(`element[name='${s}']`),o=[];return i==null||i.querySelectorAll("attribute").forEach(r=>{const l=r.getAttribute("name");o.some(b=>b.label===l)||o.push({preselect:!0,label:l,kind:x.CompletionItemKind.Snippet,documentation:l,insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:l+'="${1}"'})}),{suggestions:o}}return s==="script"&&!n?{suggestions:[]}:{suggestions:[{preselect:!0,label:"coll-node",kind:x.CompletionItemKind.Snippet,documentation:"coll",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<coll name="${1:collName}" special="${2:true}" >\n	\n</coll>'},{preselect:!0,label:"prop-node",kind:x.CompletionItemKind.Snippet,documentation:"prop",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<prop name="${1:propName}" type="${2:T}" title="${3:propTitle}" visible="${4:1}" />'},{preselect:!0,label:"contents-node",kind:x.CompletionItemKind.Snippet,documentation:"contents",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<contents name="${1:contentsName}" src="${2:srcName}" />'},{preselect:!0,label:"group-node",kind:x.CompletionItemKind.Snippet,documentation:"group",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<group name="${1:groupName}" id="${2:1}" >\n	\n</group>'},{preselect:!1,label:"frame-node",kind:x.CompletionItemKind.Snippet,documentation:"frame",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:`<frame name="\${1:frameName}" >
+	`,"global.d.ts");x.registerCompletionItemProvider("xml",{provideCompletionItems:(e,t)=>{const a=e.getValueInRange({startLineNumber:1,startColumn:1,endLineNumber:t.lineNumber,endColumn:t.column}),{tagName:s,isAttributeSearch:n}=pe(a);if(s&&n){const i=ce.querySelector(`element[name='${s}']`),o=[];return i==null||i.querySelectorAll("attribute").forEach(r=>{const l=r.getAttribute("name");o.some(b=>b.label===l)||o.push({preselect:!0,label:l,kind:x.CompletionItemKind.Snippet,documentation:l,insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:l+'="${1}"'})}),{suggestions:o}}return s==="script"&&!n?{suggestions:[]}:{suggestions:[{preselect:!0,label:"coll-node",kind:x.CompletionItemKind.Snippet,documentation:"coll",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<coll name="${1:collName}" special="${2:true}" >\n	\n</coll>'},{preselect:!0,label:"prop-node",kind:x.CompletionItemKind.Snippet,documentation:"prop",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<prop name="${1:propName}" type="${2:T}" title="${3:propTitle}" visible="${4:1}" />'},{preselect:!0,label:"contents-node",kind:x.CompletionItemKind.Snippet,documentation:"contents",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<contents name="${1:contentsName}" src="${2:srcName}" />'},{preselect:!0,label:"group-node",kind:x.CompletionItemKind.Snippet,documentation:"group",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<group name="${1:groupName}" id="${2:1}" >\n	\n</group>'},{preselect:!1,label:"frame-node",kind:x.CompletionItemKind.Snippet,documentation:"frame",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:`<frame name="\${1:frameName}" >
 	
 </frame>`},{preselect:!1,label:"param-node",kind:x.CompletionItemKind.Snippet,documentation:"param",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<param name="${1:paramName}" />'},{preselect:!1,label:"method-node",kind:x.CompletionItemKind.Snippet,documentation:"method",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:`<\${1:methodName}>
 	<action name="runscript">
@@ -6772,11 +7080,11 @@ writeString: (...args: any[]): void
 			\${2:// Script content...}
 		<\/script>
 	</action>
-</\${1:methodName}>`}]}}});const ce=(e,t)=>H.create(e,m({value:"",language:t},ue()));function de(e){let t=e.match(/<\/*(?=\S*)([a-zA-Z-]+)/g);if(!t)return{tagName:null,isAttributeSearch:null};let a=[];for(let s=t.length-1;s>=0;s--)if(t[s].indexOf("</")===0)a.push(t[s].substring("</".length));else{let n=e.lastIndexOf(t[s]),i=t[s].substring("<".length);if(e.indexOf("/>",n)===-1){if(!a.length||a[a.length-1]!==i)return e=e.substring(n),{tagName:i,isAttributeSearch:e.indexOf("<")>e.indexOf(">")};a.splice(a.length-1,1)}e=e.substring(0,n)}return{tagName:null,isAttributeSearch:null}}var pe=Object.defineProperty,be=Object.getOwnPropertyDescriptor,C=(e,t,a,s)=>{for(var n=s>1?void 0:s?be(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&pe(t,a,n),n};let _=class extends q{constructor(){super();this.type="",this.editor=null}createRenderRoot(){return this}render(){return f`
+</\${1:methodName}>`}]}}});const de=(e,t)=>W.create(e,m({value:"",language:t},me()));function pe(e){let t=e.match(/<\/*(?=\S*)([a-zA-Z-]+)/g);if(!t)return{tagName:null,isAttributeSearch:null};let a=[];for(let s=t.length-1;s>=0;s--)if(t[s].indexOf("</")===0)a.push(t[s].substring("</".length));else{let n=e.lastIndexOf(t[s]),i=t[s].substring("<".length);if(e.indexOf("/>",n)===-1){if(!a.length||a[a.length-1]!==i)return e=e.substring(n),{tagName:i,isAttributeSearch:e.indexOf("<")>e.indexOf(">")};a.splice(a.length-1,1)}e=e.substring(0,n)}return{tagName:null,isAttributeSearch:null}}var be=Object.defineProperty,ge=Object.getOwnPropertyDescriptor,C=(e,t,a,s)=>{for(var n=s>1?void 0:s?ge(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&be(t,a,n),n};let _=class extends h{constructor(){super();this.type="",this.editor=null}createRenderRoot(){return this}render(){return f`
 			<div class="editor-container">
 				<div class="code-editor"></div>
 			</div>
-		`}firstUpdated(){this.createEditor()}async createEditor(){this.editor&&(this.editor.dispose(),await new Promise(e=>setTimeout(()=>e(!0),100))),this.editor=ce(this.editorElement,this.type),this.editor.setValue(this.editorValue),this.editor.onDidChangeModelContent(()=>this.onUpdate(this.editor.getValue()))}};C([d({type:String})],_.prototype,"type",2);C([d({type:String})],_.prototype,"editorValue",2);C([d({type:Function})],_.prototype,"onUpdate",2);C([K(".code-editor")],_.prototype,"editorElement",2);_=C([A("code-editor")],_);var ge=Object.defineProperty,ye=Object.getOwnPropertyDescriptor,N=(e,t,a,s)=>{for(var n=s>1?void 0:s?ye(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&ge(t,a,n),n};let E=class extends q{constructor(){super(...arguments);this.url="http://localhost:8080/"}createRenderRoot(){return this}render(){return f`<iframe src="${this.url}#/preview?v=${this.urlParam}"></iframe>`}};N([d({type:String})],E.prototype,"url",2);N([d({type:String})],E.prototype,"urlParam",2);E=N([A("xone-preview")],E);var ve=Object.defineProperty,_e=Object.getOwnPropertyDescriptor,F=(e,t,a,s)=>{for(var n=s>1?void 0:s?_e(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&ve(t,a,n),n};let S=class extends q{createRenderRoot(){return this}render(){var e;return f` <div class="settings">
+		`}firstUpdated(){this.createEditor()}async createEditor(){this.editor&&(this.editor.dispose(),await new Promise(e=>setTimeout(()=>e(!0),100))),this.editor=de(this.editorElement,this.type),this.editor.setValue(this.editorValue),this.editor.onDidChangeModelContent(()=>this.onUpdate(this.editor.getValue()))}};C([d({type:String})],_.prototype,"type",2);C([d({type:String})],_.prototype,"editorValue",2);C([d({type:Function})],_.prototype,"onUpdate",2);C([K(".code-editor")],_.prototype,"editorElement",2);_=C([A("code-editor")],_);var ye=Object.defineProperty,ve=Object.getOwnPropertyDescriptor,E=(e,t,a,s)=>{for(var n=s>1?void 0:s?ve(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&ye(t,a,n),n};let q=class extends h{constructor(){super(...arguments);this.url="http://localhost:8080/"}createRenderRoot(){return this}render(){return f`<iframe src="${this.url}#/preview?v=${this.urlParam}"></iframe>`}};E([d({type:String})],q.prototype,"url",2);E([d({type:String})],q.prototype,"urlParam",2);q=E([A("xone-preview")],q);var _e=Object.defineProperty,fe=Object.getOwnPropertyDescriptor,O=(e,t,a,s)=>{for(var n=s>1?void 0:s?fe(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&_e(t,a,n),n};let S=class extends h{createRenderRoot(){return this}render(){var e;return f` <div class="settings">
 			<label for="resolutionWidth">Resolution width:</label>
 			<input
 				type="number"
@@ -6856,4 +7164,4 @@ writeString: (...args: any[]): void
 				<option value="on" selected>on</option>
 				<option value="off">off</option>
 			</select>
-		</div>`}updateSettings(e,t){switch(t){case"resolutionWidth":return this.onUpdate(g(m({},this.settings),{resolutionWidth:Number(e.value)}));case"resolutionHeight":return this.onUpdate(g(m({},this.settings),{resolutionHeight:Number(e.value)}));case"fontFactor":return this.onUpdate(g(m({},this.settings),{fontFactor:Number(e.value)}));case"webLayout":return this.onUpdate(g(m({},this.settings),{webLayout:e.value}));case"scaleFontsize":return this.onUpdate(g(m({},this.settings),{scaleFontsize:e.value}))}}reloadEditors(){document.querySelectorAll("code-editor").forEach(e=>e.createEditor())}};F([d({type:Object})],S.prototype,"settings",2);F([d({type:Function})],S.prototype,"onUpdate",2);S=F([A("xone-settings")],S);
+		</div>`}updateSettings(e,t){switch(t){case"resolutionWidth":return this.onUpdate(g(m({},this.settings),{resolutionWidth:Number(e.value)}));case"resolutionHeight":return this.onUpdate(g(m({},this.settings),{resolutionHeight:Number(e.value)}));case"fontFactor":return this.onUpdate(g(m({},this.settings),{fontFactor:Number(e.value)}));case"webLayout":return this.onUpdate(g(m({},this.settings),{webLayout:e.value}));case"scaleFontsize":return this.onUpdate(g(m({},this.settings),{scaleFontsize:e.value}))}}reloadEditors(){document.querySelectorAll("code-editor").forEach(e=>e.createEditor())}};O([d({type:Object})],S.prototype,"settings",2);O([d({type:Function})],S.prototype,"onUpdate",2);S=O([A("xone-settings")],S);

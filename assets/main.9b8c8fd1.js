@@ -1,6 +1,6 @@
 var M=Object.defineProperty,U=Object.defineProperties;var G=Object.getOwnPropertyDescriptors;var L=Object.getOwnPropertySymbols;var X=Object.prototype.hasOwnProperty,B=Object.prototype.propertyIsEnumerable;var w=(e,t,a)=>t in e?M(e,t,{enumerable:!0,configurable:!0,writable:!0,value:a}):e[t]=a,m=(e,t)=>{for(var a in t||(t={}))X.call(t,a)&&w(e,a,t[a]);if(L)for(var a of L(t))B.call(t,a)&&w(e,a,t[a]);return e},b=(e,t)=>U(e,G(t));import{p as z,e as $,t as g,n as A,s as h,d as N,a as T,b as _,W as H,c as W,f as K,l as x,g as J,h as d,i as Y}from"./vendor.3c675b84.js";const Q=function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))o(n);new MutationObserver(n=>{for(const i of n)if(i.type==="childList")for(const s of i.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function a(n){const i={};return n.integrity&&(i.integrity=n.integrity),n.referrerpolicy&&(i.referrerPolicy=n.referrerpolicy),n.crossorigin==="use-credentials"?i.credentials="include":n.crossorigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function o(n){if(n.ep)return;n.ep=!0;const i=a(n);fetch(n.href,i)}};Q();String.prototype.compress=function(){var e,t={},a=this,o,n,i="",s=[],r="",l=256;for(e=0;e<256;e+=1)t[String.fromCharCode(e)]=e;for(e=0;e<a.length;e+=1)o=a.charAt(e),n=i+o,t.hasOwnProperty(n)?i=n:(s.push(t[i]),r+=String.fromCharCode(t[i]),t[n]=l++,i=String(o));return i!==""&&(s.push(t[i]),r+=String.fromCharCode(t[i])),r};String.prototype.decompress=function(){var e,t=[],a=[],o=this,n,i,s,r="",l=256;for(e=0;e<256;e+=1)a[e]=String.fromCharCode(e);if(o&&typeof o=="string"){for(e=0;e<o.length;e+=1)t.push(o[e].charCodeAt(0));o=t,t=null}for(n=String.fromCharCode(o[0]),i=n,e=1;e<o.length;e+=1){if(s=o[e],a[s])r=a[s];else if(s===l)r=n+n.charAt(0);else return null;i+=r,a[l++]=n+r.charAt(0),n=r}return i};const Z=()=>["createObject","currentItem","deleteItem","deleteObject","executeNode","findObject","get","getCollection","getContents","getCurrentItem","getItem","getText","hasSomething","loadAll","loadFromJson","loadFromJsonArray","moveFirst","moveLast","moveNext","movePrev","msgBox","msgBoxWithSound","pickFile","save","setText","sleep","startBrowse","startCamera","startGps","startGpsV1","startGpsV2"];let y;const ee=["body","expression","declarations","init","callee","object","argument","arguments","right"],te=()=>y=Z(),ne=new DOMParser;function ae(e,t){try{if(!t)return e;ne.parseFromString(`<root>${e}</root>`,"text/xml").querySelectorAll("action > script").forEach(o=>e=e.replace(o.textContent,`
 `+R(o.textContent)))}catch{}finally{return e}}function oe(e,t){try{return t?(te(),R(e)):e}catch{return e}}function R(e){try{const t=e;let a=t;try{t.match(/'([^']+)'/).forEach(s=>{a=a.replace(s,s.split(`
-`).join("~~"))})}catch{}const o=z(a),n=(s,r,l=!1)=>{var D,I,P,j;((D=s.type)==null?void 0:D.includes("Function"))&&r.push(s),ee.forEach(u=>{!s[u]||n(s[u],r,l)}),r=r.filter(u=>u!==s),s instanceof Array&&s.forEach(u=>{n(u,r,l)});const C=((I=s.callee)==null?void 0:I.name)||((j=(P=s.callee)==null?void 0:P.property)==null?void 0:j.name);if(!(!C||!y.includes(C)))if(l){if(r.length===0)return;const{name:u}=r[0].id;y.includes(u)||y.push(u)}else{const u=m({},s);s.type="AwaitExpression",s.argument=u,r.forEach(k=>k.async=!0)}};let i;do i=y.length,o.body.forEach(s=>n(s,[],!0));while(i!==y.length);return o.body.forEach(s=>n(s,[])),$.generate(o)}catch{return""}}var se=Object.defineProperty,ie=Object.getOwnPropertyDescriptor,p=(e,t,a,o)=>{for(var n=o>1?void 0:o?ie(t,a):t,i=e.length-1,s;i>=0;i--)(s=e[i])&&(n=(o?s(t,a,n):s(n))||n);return o&&n&&se(t,a,n),n};let c=class extends h{constructor(){super();this.xmlString="",this.cssString="",this.jsString="",this.urlParam="",this.settings={resolutionWidth:-1,resolutionHeight:-1,webLayout:"",scaleFontsize:"false",fontFactor:5},this.isSettingsOpened=!1,this.initEditorValues()}createRenderRoot(){return this}initEditorValues(){try{const{hash:e}=window.location,[t,a,o,n,i,s,r,l]=e.split(e.includes("%7C")?"%7C":"|");if(t&&(this.xmlString=N(t).decompress()),a&&(this.cssString=N(a).decompress()),o&&(this.jsString=N(o).decompress()),n)try{this.settings.resolutionWidth=Number(n)}catch{}i&&(this.settings.resolutionHeight=Number(i)),s&&(this.settings.webLayout=N(s.decompress())),r&&(this.settings.scaleFontsize=r),l&&(this.settings.fontFactor=Number(l))}catch{}}reloadPreview(){var a;this.updateUrl(!0);const e=document.querySelector("xone-preview");e&&((a=e.parentElement)==null||a.removeChild(e));const t=document.getElementById("editor-panel");t.innerHTML=`<xone-preview url="https://mrscolo.github.io/xone-framework/" urlParam=${this.urlParam}></xone-preview>`}updated(e){!e.has("xmlString")&&!e.has("cssString")&&!e.has("jsString")||!this.xmlString&&!this.cssString&&!this.jsString||(this.updateUrl(!1),this.updateTimeout&&clearTimeout(this.updateTimeout),this.updateTimeout=setTimeout(()=>this.reloadPreview(),document.querySelector("xone-preview")?2500:0))}updateUrl(e){const{resolutionWidth:t,resolutionHeight:a,webLayout:o,scaleFontsize:n,fontFactor:i}=this.settings,s=oe(this.jsString,e),r=ae(this.xmlString,e);let l=`${T(r.compress())}|${T(this.cssString.compress())}|${T(s.compress())}`;l+=`|${t.toString()}|${a.toString()}|${T(o.toString().compress())}`,l+=`|${n}|${i}`,e?this.urlParam=l:window.location.hash=l}render(){return _`
+`).join("~~"))})}catch{}const o=z(a),n=(s,r,l=!1)=>{var D,I,j,P;((D=s.type)==null?void 0:D.includes("Function"))&&r.push(s),ee.forEach(u=>{!s[u]||n(s[u],r,l)}),r=r.filter(u=>u!==s),s instanceof Array&&s.forEach(u=>{n(u,r,l)});const C=((I=s.callee)==null?void 0:I.name)||((P=(j=s.callee)==null?void 0:j.property)==null?void 0:P.name);if(!(!C||!y.includes(C)))if(l){if(r.length===0)return;const{name:u}=r[0].id;y.includes(u)||y.push(u)}else{const u=m({},s);s.type="AwaitExpression",s.argument=u,r.forEach(k=>k.async=!0)}};let i;do i=y.length,o.body.forEach(s=>n(s,[],!0));while(i!==y.length);return o.body.forEach(s=>n(s,[])),$.generate(o)}catch{return""}}var se=Object.defineProperty,ie=Object.getOwnPropertyDescriptor,p=(e,t,a,o)=>{for(var n=o>1?void 0:o?ie(t,a):t,i=e.length-1,s;i>=0;i--)(s=e[i])&&(n=(o?s(t,a,n):s(n))||n);return o&&n&&se(t,a,n),n};let c=class extends h{constructor(){super();this.xmlString="",this.cssString="",this.jsString="",this.urlParam="",this.settings={resolutionWidth:-1,resolutionHeight:-1,webLayout:"",scaleFontsize:"false",fontFactor:5},this.isSettingsOpened=!1,this.initEditorValues()}createRenderRoot(){return this}initEditorValues(){try{const{hash:e}=window.location,[t,a,o,n,i,s,r,l]=e.split(e.includes("%7C")?"%7C":"|");if(t&&(this.xmlString=N(t).decompress()),a&&(this.cssString=N(a).decompress()),o&&(this.jsString=N(o).decompress()),n)try{this.settings.resolutionWidth=Number(n)}catch{}i&&(this.settings.resolutionHeight=Number(i)),s&&(this.settings.webLayout=N(s.decompress())),r&&(this.settings.scaleFontsize=r),l&&(this.settings.fontFactor=Number(l))}catch{}}reloadPreview(){var a;this.updateUrl(!0);const e=document.querySelector("xone-preview");e&&((a=e.parentElement)==null||a.removeChild(e));const t=document.getElementById("editor-panel");t.innerHTML=`<xone-preview url="https://mrscolo.github.io/xone-framework/" urlParam=${this.urlParam}></xone-preview>`}updated(e){!e.has("xmlString")&&!e.has("cssString")&&!e.has("jsString")||!this.xmlString&&!this.cssString&&!this.jsString||(this.updateUrl(!1),this.updateTimeout&&clearTimeout(this.updateTimeout),this.updateTimeout=setTimeout(()=>this.reloadPreview(),document.querySelector("xone-preview")?2500:0))}updateUrl(e){const{resolutionWidth:t,resolutionHeight:a,webLayout:o,scaleFontsize:n,fontFactor:i}=this.settings,s=oe(this.jsString,e),r=ae(this.xmlString,e);let l=`${T(r.compress())}|${T(this.cssString.compress())}|${T(s.compress())}`;l+=`|${t.toString()}|${a.toString()}|${T(o.toString().compress())}`,l+=`|${n}|${i}`,e?this.urlParam=l:window.location.hash=l}render(){return _`
 			<div class="main-layout">
 				<!-- XOne image -->
 				<div style="position:absolute;z-index:1;bottom:25px;left:100px;opacity:.2;">
@@ -6828,7 +6828,7 @@ declare class XoneUI {
     /**
      * Hide loader spinner
      */
-    hideLoader(): Promise<void>;
+    hideLoader(): void;
     hideNavigationDrawer(): void;
     hideSoftwareKeyboard(): void;
     hideWaitDialog(): void;
@@ -6845,7 +6845,7 @@ declare class XoneUI {
      * Launch entry point
      * @param {boolean} [isOnlyWebLayout]
      */
-    launchEntryPoint(isOnlyWebLayout?: boolean): Promise<void>;
+    launchEntryPoint(isOnlyWebLayout?: boolean): void;
     lineFeed(Lines: any): void;
     lockGroup(groupId: any): void;
     /**
@@ -6854,27 +6854,27 @@ declare class XoneUI {
      * habr\xE1 que deprecarlo alg\xFAn d\xEDa pero se usa mucho
      * @returns {Promise}
      */
-    login(): Promise<any>;
+    login(): any;
     makePhoneCall(PhoneNumber: any): void;
     /**
      * Show MsgBox
      * @param {string|XoneDataObject} message
      * @param {string} [title]
      * @param {number} [flags]
-     * @returns {Promise<number>}
+     * @returns {number}
      */
-    msgBox(message: string | XoneDataObject, title?: string, flags?: number): Promise<number>;
-    msgBoxWithSound(Message: any, Title: any, type: any, Sound: any, Vibrate: any, NumberRepeat: any): Promise<number>;
+    msgBox(message: string | XoneDataObject, title?: string, flags?: number): number;
+    msgBoxWithSound(Message: any, Title: any, type: any, Sound: any, Vibrate: any, NumberRepeat: any): number;
     /**
      * Open new Edit View and push it in Breadcrumbs stack
      * @param {XoneDataObject|string} param
      */
-    openEditView(param: XoneDataObject | string): Promise<void>;
+    openEditView(param: XoneDataObject | string): void;
     /**
      * Open new Edit View and push it in Breadcrumbs stack then 1
      * @param {XoneDataObject|string} param
      */
-    openEditViewAndExit(param: XoneDataObject | string): Promise<void>;
+    openEditViewAndExit(param: XoneDataObject | string): void;
     /**
      * openFile
      * @param {string} filePath
@@ -6891,24 +6891,24 @@ declare class XoneUI {
      * pickFile
      * @param {string|object} PropName
      * @param {string} Extensions
-     * @returns {Promise<string>}
+     * @returns {string}
      */
-    pickFile(PropName: string | object, Extensions: string): Promise<string>;
+    pickFile(PropName: string | object, Extensions: string): string;
     /**
      * playSound
      * @param {string} sound
-     * @returns {Promise<void>}
+     * @returns {void}
      */
-    playSound(sound: string): Promise<void>;
+    playSound(sound: string): void;
     /**
      * playSoundAndVibrate
      * @param {string} Sounds
      * @param {*} vibrate
      * @param {*} NumberRepeat
      * @param {*} ContinuePlaying
-     * @returns {Promise<void>}
+     * @returns {void}
      */
-    playSoundAndVibrate(Sounds: string, vibrate: any, NumberRepeat: any, ContinuePlaying: any): Promise<void>;
+    playSoundAndVibrate(Sounds: string, vibrate: any, NumberRepeat: any, ContinuePlaying: any): void;
     playSoundVolumen(Number: any): void;
     print(Data: any): void;
     printBIDI(Size: any, Level: any, Data: any): void;
@@ -6979,7 +6979,7 @@ declare class XoneUI {
     /**
      * Show Spinner loader
      */
-    showLoader(): Promise<void>;
+    showLoader(): void;
     showNavigationDrawer(Orientation: any): void;
     /**
      * showNotification
@@ -7018,7 +7018,7 @@ declare class XoneUI {
      * sleep
      * @param {number} Seconds
      */
-    sleep(Seconds: number): Promise<void>;
+    sleep(Seconds: number): void;
     /**
      * speak
      * @param {string} Language
@@ -7036,26 +7036,26 @@ declare class XoneUI {
      * @param {string} PropName
      * @param {string} type
      */
-    startCamera(PropName: string, type?: string): Promise<void>;
+    startCamera(PropName: string, type?: 'photo' | 'video'): void;
     /**
      * startGps
      * @param {*} JSONObject
      * @param {*} Interval
      * @param {*} Flags
      */
-    startGps(JSONObject: any, Interval: any, Flags: any): Promise<void>;
+    startGps(JSONObject: any, Interval: any, Flags: any): void;
     _startGpsTimeout: NodeJS.Timeout;
     /**
      * startGpsV1
      */
-    startGpsV1(): Promise<void>;
+    startGpsV1(): void;
     /**
      * startGpsV2
      * @param {*} JSONObject
      * @param {*} Interval
      * @param {*} Flags
      */
-    startGpsV2(JSONObject: any, Interval: any, Flags: any): Promise<void>;
+    startGpsV2(JSONObject: any, Interval: any, Flags: any): void;
     startKioskMode(): void;
     startPrint(PrinterType: any): void;
     startReplica(): void;
@@ -7087,9 +7087,9 @@ declare class XoneUI {
     updateWaitDialog(message: any, value: any): void;
     /**
      * @param {Blob} file
-     * @returns {Promise<string>}
+     * @returns {string}
      */
-    uploadFile(file: Blob): Promise<string>;
+    uploadFile(file: Blob): string;
     useLastPrinter(True: any): void;
     vibrate(): void;
     writeString(): void;

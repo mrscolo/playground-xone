@@ -1629,6 +1629,13 @@ var M=Object.defineProperty,U=Object.defineProperties;var G=Object.getOwnPropert
               </xs:documentation>
             </xs:annotation>
           </xs:attribute>
+			<xs:attribute name="gallery-columns"
+                    type="xs:string"
+                    use="optional">
+        <xs:annotation>
+          <xs:documentation xml:lang="es">N. columnas en un gridview.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
 			<xs:attribute name="tpadding"
                     type="xs:string"
                     use="optional">
@@ -6662,11 +6669,11 @@ declare class XoneView {
      * bindedEvents
      * @type {Array<object>}
      */
-    _bindedEvents: Array<object>;
+    private _bindedEvents: Array<object>;
     /**
      * @type {XoneDataObject}
      */
-    _xoneDataObject: XoneDataObject;
+    private _xoneDataObject: XoneDataObject;
     get bindedEvents(): any[];
     /**
      * addControl

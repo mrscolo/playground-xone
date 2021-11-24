@@ -5853,8 +5853,8 @@ declare class XoneDataCollection implements IFieldProperties {
      */
     removeItem(Index: number | string | XoneDataObject): boolean;
     loadFromJson(...FunctionParams: any[]): XoneDataCollection;
-    private loadFromJsonArray;
-}`,xe=`
+    private loadFromJsonArray;}
+`,xe=`
 declare class XoneApplication implements IXoneApp {
     get isApplication(): boolean;
     private _objectID;
@@ -6727,17 +6727,7 @@ declare class XoneControl {
 /**
  * Types Definitions
  */
-type SnackBarParams = {
-    color?: string;
-    duration?: 'short' | 'long' | 'indeterminate' | 'indefinite';
-    width?: string;
-    height?: string;
-    text?: string;
-    textColor?: string;
-    actionText?: string;
-    actionTextColor?: string;
-    actionMethod?: Function;
-};
+
 declare class XoneUI {
     /**
      * @type {XoneUI}
@@ -7005,7 +6995,17 @@ declare class XoneUI {
      * Show Toast
      * @param {SnackBarParams} params
      */
-    showSnackbar(params: SnackBarParams): void;
+    showSnackbar(params: {
+            color?: string;
+            duration?: 'short' | 'long' | 'indeterminate' | 'indefinite';
+            width?: string;
+            height?: string;
+            text?: string;
+            textColor?: string;
+            actionText?: string;
+            actionTextColor?: string;
+            actionMethod?: Function;
+        }): void;
     showSoftwareKeyboard(): void;
     /**
      * Show Toast
@@ -7107,7 +7107,7 @@ declare class XoneUI {
 	const user: XoneDataObject;
 	const selfDataColl: XoneDataCollection;
 	const ui: XoneUI;
-	`,"global.d.ts");x.registerCompletionItemProvider("xml",{provideCompletionItems:(e,t)=>{const a=e.getValueInRange({startLineNumber:1,startColumn:1,endLineNumber:t.lineNumber,endColumn:t.column}),{tagName:s,isAttributeSearch:n}=pe(a);if(s&&n){const i=V.querySelector(`element[name='${s}']`),o=[];return i==null||i.querySelectorAll("attribute").forEach(r=>{const l=r.getAttribute("name");o.some(b=>b.label===l)||o.push({preselect:!0,label:l,kind:x.CompletionItemKind.Snippet,documentation:l,insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:l+'="${1}"'})}),{suggestions:o}}return s==="script"&&!n?{suggestions:[]}:{suggestions:[{preselect:!0,label:"coll-node",kind:x.CompletionItemKind.Snippet,documentation:"coll",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<coll name="${1:collName}" special="${2:true}" >\n	\n</coll>'},{preselect:!0,label:"prop-node",kind:x.CompletionItemKind.Snippet,documentation:"prop",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<prop name="${1:propName}" type="${2:T}" title="${3:propTitle}" visible="${4:1}" />'},{preselect:!0,label:"contents-node",kind:x.CompletionItemKind.Snippet,documentation:"contents",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<contents name="${1:contentsName}" src="${2:srcName}" />'},{preselect:!0,label:"group-node",kind:x.CompletionItemKind.Snippet,documentation:"group",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<group name="${1:groupName}" id="${2:1}" >\n	\n</group>'},{preselect:!1,label:"frame-node",kind:x.CompletionItemKind.Snippet,documentation:"frame",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:`<frame name="\${1:frameName}" >
+	`,"global.d.ts");x.registerCompletionItemProvider("xml",{provideCompletionItems:(e,t)=>{const a=e.getValueInRange({startLineNumber:1,startColumn:1,endLineNumber:t.lineNumber,endColumn:t.column}),{tagName:s,isAttributeSearch:n}=be(a);if(s&&n){const i=V.querySelector(`element[name='${s}']`),o=[];return i==null||i.querySelectorAll("attribute").forEach(r=>{const l=r.getAttribute("name");o.some(b=>b.label===l)||o.push({preselect:!0,label:l,kind:x.CompletionItemKind.Snippet,documentation:l,insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:l+'="${1}"'})}),{suggestions:o}}return s==="script"&&!n?{suggestions:[]}:{suggestions:[{preselect:!0,label:"coll-node",kind:x.CompletionItemKind.Snippet,documentation:"coll",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<coll name="${1:collName}" special="${2:true}" >\n	\n</coll>'},{preselect:!0,label:"prop-node",kind:x.CompletionItemKind.Snippet,documentation:"prop",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<prop name="${1:propName}" type="${2:T}" title="${3:propTitle}" visible="${4:1}" />'},{preselect:!0,label:"contents-node",kind:x.CompletionItemKind.Snippet,documentation:"contents",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<contents name="${1:contentsName}" src="${2:srcName}" />'},{preselect:!0,label:"group-node",kind:x.CompletionItemKind.Snippet,documentation:"group",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<group name="${1:groupName}" id="${2:1}" >\n	\n</group>'},{preselect:!1,label:"frame-node",kind:x.CompletionItemKind.Snippet,documentation:"frame",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:`<frame name="\${1:frameName}" >
 	
 </frame>`},{preselect:!1,label:"param-node",kind:x.CompletionItemKind.Snippet,documentation:"param",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<param name="${1:paramName}" />'},{preselect:!1,label:"method-node",kind:x.CompletionItemKind.Snippet,documentation:"method",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:`<\${1:methodName}>
 	<action name="runscript">
@@ -7115,11 +7115,11 @@ declare class XoneUI {
 			\${2:// Script content...}
 		<\/script>
 	</action>
-</\${1:methodName}>`}]}}});const de=(e,t)=>{const a=()=>{var n;return{automaticLayout:!0,fontSize:Number((n=localStorage.getItem("fontSize"))!=null?n:"14"),scrollBeyondLastLine:!0,padding:{top:16},minimap:{enabled:localStorage.getItem("minimap")!=="off"},theme:localStorage.getItem("theme")||"vs-dark"}};return J.create(e,m({value:"",language:t},a()))};function pe(e){let t=e.match(/<\/*(?=\S*)([a-zA-Z-]+)/g);if(!t)return{tagName:null,isAttributeSearch:null};let a=[];for(let s=t.length-1;s>=0;s--)if(t[s].indexOf("</")===0)a.push(t[s].substring("</".length));else{let n=e.lastIndexOf(t[s]),i=t[s].substring("<".length);if(e.indexOf("/>",n)===-1){if(!a.length||a[a.length-1]!==i)return e=e.substring(n),{tagName:i,isAttributeSearch:e.indexOf("<")>e.indexOf(">")};a.splice(a.length-1,1)}e=e.substring(0,n)}return{tagName:null,isAttributeSearch:null}}var be=Object.defineProperty,ge=Object.getOwnPropertyDescriptor,C=(e,t,a,s)=>{for(var n=s>1?void 0:s?ge(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&be(t,a,n),n};let _=class extends h{constructor(){super();this.type="",this.editor=null}createRenderRoot(){return this}render(){return f`
+</\${1:methodName}>`}]}}});const de=()=>{var t;return{automaticLayout:!0,fontSize:Number((t=localStorage.getItem("fontSize"))!=null?t:"14"),scrollBeyondLastLine:!0,padding:{top:16},minimap:{enabled:localStorage.getItem("minimap")!=="off"},theme:localStorage.getItem("theme")||"vs-dark"}},pe=(e,t)=>J.create(e,m({value:"",language:t},de()));function be(e){let t=e.match(/<\/*(?=\S*)([a-zA-Z-]+)/g);if(!t)return{tagName:null,isAttributeSearch:null};let a=[];for(let s=t.length-1;s>=0;s--)if(t[s].indexOf("</")===0)a.push(t[s].substring("</".length));else{let n=e.lastIndexOf(t[s]),i=t[s].substring("<".length);if(e.indexOf("/>",n)===-1){if(!a.length||a[a.length-1]!==i)return e=e.substring(n),{tagName:i,isAttributeSearch:e.indexOf("<")>e.indexOf(">")};a.splice(a.length-1,1)}e=e.substring(0,n)}return{tagName:null,isAttributeSearch:null}}var ge=Object.defineProperty,ye=Object.getOwnPropertyDescriptor,C=(e,t,a,s)=>{for(var n=s>1?void 0:s?ye(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&ge(t,a,n),n};let _=class extends h{constructor(){super();this.type="",this.editor=null}createRenderRoot(){return this}render(){return f`
 			<div class="editor-container">
 				<div class="code-editor"></div>
 			</div>
-		`}firstUpdated(){this.createEditor()}async createEditor(){this.editor&&(this.editor.dispose(),await new Promise(e=>setTimeout(()=>e(!0),100))),this.editor=de(this.editorElement,this.type),this.editor.setValue(this.editorValue),this.editor.onDidChangeModelContent(()=>this.onUpdate(this.editor.getValue()))}};C([d({type:String})],_.prototype,"type",2);C([d({type:String})],_.prototype,"editorValue",2);C([d({type:Function})],_.prototype,"onUpdate",2);C([Y(".code-editor")],_.prototype,"editorElement",2);_=C([A("code-editor")],_);var ye=Object.defineProperty,ve=Object.getOwnPropertyDescriptor,O=(e,t,a,s)=>{for(var n=s>1?void 0:s?ve(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&ye(t,a,n),n};let q=class extends h{constructor(){super(...arguments);this.url="http://localhost:8080/"}createRenderRoot(){return this}render(){return f`<iframe src="${this.url}#/preview?v=${this.urlParam}"></iframe>`}};O([d({type:String})],q.prototype,"url",2);O([d({type:String})],q.prototype,"urlParam",2);q=O([A("xone-preview")],q);var _e=Object.defineProperty,fe=Object.getOwnPropertyDescriptor,F=(e,t,a,s)=>{for(var n=s>1?void 0:s?fe(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&_e(t,a,n),n};let S=class extends h{createRenderRoot(){return this}render(){var e;return f` <div class="settings">
+		`}firstUpdated(){this.createEditor()}async createEditor(){this.editor&&(this.editor.dispose(),await new Promise(e=>setTimeout(()=>e(!0),100))),this.editor=pe(this.editorElement,this.type),this.editor.setValue(this.editorValue),this.editor.onDidChangeModelContent(()=>this.onUpdate(this.editor.getValue()))}};C([d({type:String})],_.prototype,"type",2);C([d({type:String})],_.prototype,"editorValue",2);C([d({type:Function})],_.prototype,"onUpdate",2);C([Y(".code-editor")],_.prototype,"editorElement",2);_=C([A("code-editor")],_);var ve=Object.defineProperty,_e=Object.getOwnPropertyDescriptor,O=(e,t,a,s)=>{for(var n=s>1?void 0:s?_e(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&ve(t,a,n),n};let q=class extends h{constructor(){super(...arguments);this.url="http://localhost:8080/"}createRenderRoot(){return this}render(){return f`<iframe src="${this.url}#/preview?v=${this.urlParam}"></iframe>`}};O([d({type:String})],q.prototype,"url",2);O([d({type:String})],q.prototype,"urlParam",2);q=O([A("xone-preview")],q);var fe=Object.defineProperty,Ce=Object.getOwnPropertyDescriptor,F=(e,t,a,s)=>{for(var n=s>1?void 0:s?Ce(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&fe(t,a,n),n};let S=class extends h{createRenderRoot(){return this}render(){var e;return f` <div class="settings">
 			<label for="resolutionWidth">Resolution width:</label>
 			<input
 				type="number"

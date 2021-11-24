@@ -1,6 +1,6 @@
-var V=Object.defineProperty,k=Object.defineProperties;var M=Object.getOwnPropertyDescriptors;var j=Object.getOwnPropertySymbols;var U=Object.prototype.hasOwnProperty,G=Object.prototype.propertyIsEnumerable;var L=(e,t,a)=>t in e?V(e,t,{enumerable:!0,configurable:!0,writable:!0,value:a}):e[t]=a,m=(e,t)=>{for(var a in t||(t={}))U.call(t,a)&&L(e,a,t[a]);if(j)for(var a of j(t))G.call(t,a)&&L(e,a,t[a]);return e},g=(e,t)=>k(e,M(t));import{p as X,e as B,t as y,n as A,s as h,d as N,a as T,b as f,W as z,c as $,f as H,l as x,g as W,h as d,i as K}from"./vendor.621e38c1.js";const J=function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))s(n);new MutationObserver(n=>{for(const i of n)if(i.type==="childList")for(const o of i.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&s(o)}).observe(document,{childList:!0,subtree:!0});function a(n){const i={};return n.integrity&&(i.integrity=n.integrity),n.referrerpolicy&&(i.referrerPolicy=n.referrerpolicy),n.crossorigin==="use-credentials"?i.credentials="include":n.crossorigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function s(n){if(n.ep)return;n.ep=!0;const i=a(n);fetch(n.href,i)}};J();String.prototype.compress=function(e){e=e===!0;var t,a={},s=this,n,i,o="",r=[],l="",b=256;for(t=0;t<256;t+=1)a[String.fromCharCode(t)]=t;for(t=0;t<s.length;t+=1)n=s.charAt(t),i=o+n,a.hasOwnProperty(i)?o=i:(r.push(a[o]),l+=String.fromCharCode(a[o]),a[i]=b++,o=String(n));return o!==""&&(r.push(a[o]),l+=String.fromCharCode(a[o])),e?r:l};String.prototype.decompress=function(){var e,t=[],a=[],s=this,n,i,o,r="",l=256;for(e=0;e<256;e+=1)a[e]=String.fromCharCode(e);if(s&&typeof s=="string"){for(e=0;e<s.length;e+=1)t.push(s[e].charCodeAt(0));s=t,t=null}for(n=String.fromCharCode(s[0]),i=n,e=1;e<s.length;e+=1){if(o=s[e],a[o])r=a[o];else if(o===l)r=n+n.charAt(0);else return null;i+=r,a[l++]=n+r.charAt(0),n=r}return i};const Y=()=>["createObject","currentItem","deleteItem","deleteObject","executeNode","findObject","get","getCollection","getContents","getCurrentItem","getItem","getText","hasSomething","loadAll","loadFromJson","loadFromJsonArray","moveFirst","moveLast","moveNext","movePrev","msgBox","msgBoxWithSound","pickFile","save","setText","sleep","startBrowse","startCamera","startGps","startGpsV1","startGpsV2"];let v;const Q=["body","expression","declarations","init","callee","object","argument","arguments","right"],Z=()=>v=Y(),ee=new DOMParser;function te(e,t){try{if(!t)return e;ee.parseFromString(`<root>${e}</root>`,"text/xml").querySelectorAll("action > script").forEach(s=>e=e.replace(s.textContent,`
+var V=Object.defineProperty,k=Object.defineProperties;var M=Object.getOwnPropertyDescriptors;var P=Object.getOwnPropertySymbols;var U=Object.prototype.hasOwnProperty,G=Object.prototype.propertyIsEnumerable;var L=(e,t,a)=>t in e?V(e,t,{enumerable:!0,configurable:!0,writable:!0,value:a}):e[t]=a,m=(e,t)=>{for(var a in t||(t={}))U.call(t,a)&&L(e,a,t[a]);if(P)for(var a of P(t))G.call(t,a)&&L(e,a,t[a]);return e},g=(e,t)=>k(e,M(t));import{p as X,e as B,t as y,n as A,s as h,d as N,a as T,b as f,W as z,c as $,f as H,l as x,g as W,h as d,i as K}from"./vendor.621e38c1.js";const J=function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))s(n);new MutationObserver(n=>{for(const i of n)if(i.type==="childList")for(const o of i.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&s(o)}).observe(document,{childList:!0,subtree:!0});function a(n){const i={};return n.integrity&&(i.integrity=n.integrity),n.referrerpolicy&&(i.referrerPolicy=n.referrerpolicy),n.crossorigin==="use-credentials"?i.credentials="include":n.crossorigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function s(n){if(n.ep)return;n.ep=!0;const i=a(n);fetch(n.href,i)}};J();String.prototype.compress=function(e){e=e===!0;var t,a={},s=this,n,i,o="",r=[],l="",b=256;for(t=0;t<256;t+=1)a[String.fromCharCode(t)]=t;for(t=0;t<s.length;t+=1)n=s.charAt(t),i=o+n,a.hasOwnProperty(i)?o=i:(r.push(a[o]),l+=String.fromCharCode(a[o]),a[i]=b++,o=String(n));return o!==""&&(r.push(a[o]),l+=String.fromCharCode(a[o])),e?r:l};String.prototype.decompress=function(){var e,t=[],a=[],s=this,n,i,o,r="",l=256;for(e=0;e<256;e+=1)a[e]=String.fromCharCode(e);if(s&&typeof s=="string"){for(e=0;e<s.length;e+=1)t.push(s[e].charCodeAt(0));s=t,t=null}for(n=String.fromCharCode(s[0]),i=n,e=1;e<s.length;e+=1){if(o=s[e],a[o])r=a[o];else if(o===l)r=n+n.charAt(0);else return null;i+=r,a[l++]=n+r.charAt(0),n=r}return i};const Y=()=>["createObject","currentItem","deleteItem","deleteObject","executeNode","findObject","get","getCollection","getContents","getCurrentItem","getItem","getText","hasSomething","loadAll","loadFromJson","loadFromJsonArray","moveFirst","moveLast","moveNext","movePrev","msgBox","msgBoxWithSound","pickFile","save","setText","sleep","startBrowse","startCamera","startGps","startGpsV1","startGpsV2"];let v;const Q=["body","expression","declarations","init","callee","object","argument","arguments","right"],Z=()=>v=Y(),ee=new DOMParser;function te(e,t){try{if(!t)return e;ee.parseFromString(`<root>${e}</root>`,"text/xml").querySelectorAll("action > script").forEach(s=>e=e.replace(s.textContent,`
 `+w(s.textContent)))}catch{}finally{return e}}function ne(e,t){try{return t?(Z(),w(e)):e}catch{return e}}function w(e){try{const t=e;let a=t;try{t.match(/'([^']+)'/).forEach(o=>{a=a.replace(o,o.split(`
-`).join("~~"))})}catch{}const s=X(a,{ecmaVersion:2022}),n=(o,r,l=!1)=>{var F,D,I,P;((F=o.type)==null?void 0:F.includes("Function"))&&r.push(o),Q.forEach(u=>{!o[u]||n(o[u],r,l)}),r=r.filter(u=>u!==o),o instanceof Array&&o.forEach(u=>{n(u,r,l)});const b=((D=o.callee)==null?void 0:D.name)||((P=(I=o.callee)==null?void 0:I.property)==null?void 0:P.name);if(!(!b||!v.includes(b)))if(l){if(r.length===0)return;const{name:u}=r[0].id;v.includes(u)||v.push(u)}else{const u=m({},o);o.type="AwaitExpression",o.argument=u,r.forEach(R=>R.async=!0)}};let i;do i=v.length,s.body.forEach(o=>n(o,[],!0));while(i!==v.length);return s.body.forEach(o=>n(o,[])),B.generate(s)}catch{return""}}var ae=Object.defineProperty,oe=Object.getOwnPropertyDescriptor,p=(e,t,a,s)=>{for(var n=s>1?void 0:s?oe(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&ae(t,a,n),n};let c=class extends h{constructor(){super();this.xmlString="",this.cssString="",this.jsString="",this.urlParam="",this.settings={resolutionWidth:-1,resolutionHeight:-1,webLayout:"",scaleFontsize:"false",fontFactor:5},this.isSettingsOpened=!1,this.initEditorValues()}createRenderRoot(){return this}initEditorValues(){try{const{hash:e}=window.location,[t,a,s,n,i,o,r,l]=e.split(e.includes("%7C")?"%7C":"|");if(t&&(this.xmlString=N(t).decompress()),a&&(this.cssString=N(a).decompress()),s&&(this.jsString=N(s).decompress()),n)try{this.settings.resolutionWidth=Number(n)}catch{}i&&(this.settings.resolutionHeight=Number(i)),o&&(this.settings.webLayout=N(o.decompress())),r&&(this.settings.scaleFontsize=r),l&&(this.settings.fontFactor=Number(l))}catch{}}reloadPreview(){var a;this.updateUrl(!0);const e=document.querySelector("xone-preview");e&&((a=e.parentElement)==null||a.removeChild(e));const t=document.getElementById("editor-panel");t.innerHTML=`<xone-preview url="https://mrscolo.github.io/xone-framework/" urlParam=${this.urlParam}></xone-preview>`}updated(e){!e.has("xmlString")&&!e.has("cssString")&&!e.has("jsString")||!this.xmlString&&!this.cssString&&!this.jsString||(this.updateUrl(!1),this.updateTimeout&&clearTimeout(this.updateTimeout),this.updateTimeout=setTimeout(()=>this.reloadPreview(),document.querySelector("xone-preview")?2500:0))}updateUrl(e){const{resolutionWidth:t,resolutionHeight:a,webLayout:s,scaleFontsize:n,fontFactor:i}=this.settings,o=ne(this.jsString,e),r=te(this.xmlString,e);let l=`${T(r.compress())}|${T(this.cssString.compress())}|${T(o.compress())}`;l+=`|${t.toString()}|${a.toString()}|${T(s.toString().compress())}`,l+=`|${n}|${i}`,e?this.urlParam=l:window.location.hash=l}render(){return f`
+`).join("~~"))})}catch{}const s=X(a,{ecmaVersion:2022}),n=(o,r,l=!1)=>{var F,D,I,j;((F=o.type)==null?void 0:F.includes("Function"))&&r.push(o),Q.forEach(u=>{!o[u]||n(o[u],r,l)}),r=r.filter(u=>u!==o),o instanceof Array&&o.forEach(u=>{n(u,r,l)});const b=((D=o.callee)==null?void 0:D.name)||((j=(I=o.callee)==null?void 0:I.property)==null?void 0:j.name);if(!(!b||!v.includes(b)))if(l){if(r.length===0)return;const{name:u}=r[0].id;v.includes(u)||v.push(u)}else{const u=m({},o);o.type="AwaitExpression",o.argument=u,r.forEach(R=>R.async=!0)}};let i;do i=v.length,s.body.forEach(o=>n(o,[],!0));while(i!==v.length);return s.body.forEach(o=>n(o,[])),B.generate(s)}catch{return""}}var ae=Object.defineProperty,oe=Object.getOwnPropertyDescriptor,p=(e,t,a,s)=>{for(var n=s>1?void 0:s?oe(t,a):t,i=e.length-1,o;i>=0;i--)(o=e[i])&&(n=(s?o(t,a,n):o(n))||n);return s&&n&&ae(t,a,n),n};let c=class extends h{constructor(){super();this.xmlString="",this.cssString="",this.jsString="",this.urlParam="",this.settings={resolutionWidth:-1,resolutionHeight:-1,webLayout:"",scaleFontsize:"false",fontFactor:5},this.isSettingsOpened=!1,this.initEditorValues()}createRenderRoot(){return this}initEditorValues(){try{const{hash:e}=window.location,[t,a,s,n,i,o,r,l]=e.split(e.includes("%7C")?"%7C":"|");if(t&&(this.xmlString=N(t).decompress()),a&&(this.cssString=N(a).decompress()),s&&(this.jsString=N(s).decompress()),n)try{this.settings.resolutionWidth=Number(n)}catch{}i&&(this.settings.resolutionHeight=Number(i)),o&&(this.settings.webLayout=N(o.decompress())),r&&(this.settings.scaleFontsize=r),l&&(this.settings.fontFactor=Number(l))}catch{}}reloadPreview(){var a;this.updateUrl(!0);const e=document.querySelector("xone-preview");e&&((a=e.parentElement)==null||a.removeChild(e));const t=document.getElementById("editor-panel");t.innerHTML=`<xone-preview url="https://mrscolo.github.io/xone-framework/" urlParam=${this.urlParam}></xone-preview>`}updated(e){!e.has("xmlString")&&!e.has("cssString")&&!e.has("jsString")||!this.xmlString&&!this.cssString&&!this.jsString||(this.updateUrl(!1),this.updateTimeout&&clearTimeout(this.updateTimeout),this.updateTimeout=setTimeout(()=>this.reloadPreview(),document.querySelector("xone-preview")?2500:0))}updateUrl(e){const{resolutionWidth:t,resolutionHeight:a,webLayout:s,scaleFontsize:n,fontFactor:i}=this.settings,o=ne(this.jsString,e),r=te(this.xmlString,e);let l=`${T(r.compress())}|${T(this.cssString.compress())}|${T(o.compress())}`;l+=`|${t.toString()}|${a.toString()}|${T(s.toString().compress())}`,l+=`|${n}|${i}`,e?this.urlParam=l:window.location.hash=l}render(){return f`
 			<div class="main-layout">
 				<!-- XOne image -->
 				<div style="position:absolute;z-index:1;bottom:25px;left:100px;opacity:.2;">
@@ -6803,7 +6803,7 @@ declare class XoneUI {
     /**
      * Hide loader spinner
      */
-    hideLoader(): Promise<void>;
+    hideLoader(): void;
     hideNavigationDrawer(): void;
     hideSoftwareKeyboard(): void;
     hideWaitDialog(): void;
@@ -6820,7 +6820,7 @@ declare class XoneUI {
      * Launch entry point
      * @param {boolean} [isOnlyWebLayout]
      */
-    launchEntryPoint(isOnlyWebLayout?: boolean): Promise<void>;
+    launchEntryPoint(isOnlyWebLayout?: boolean): void;
     lineFeed(Lines: any): void;
     lockGroup(groupId: any): void;
     /**
@@ -6829,27 +6829,27 @@ declare class XoneUI {
      * habr\xE1 que deprecarlo alg\xFAn d\xEDa pero se usa mucho
      * @returns {Promise}
      */
-    login(): Promise<any>;
+    login(): any;
     makePhoneCall(PhoneNumber: any): void;
     /**
      * Show MsgBox
      * @param {string|XoneDataObject} message
      * @param {string} [title]
      * @param {number} [flags]
-     * @returns {Promise<number>}
+     * @returns {number}
      */
-    msgBox(message: string | XoneDataObject, title?: string, flags?: number): Promise<number>;
-    msgBoxWithSound(Message: any, Title: any, type: any, Sound: any, Vibrate: any, NumberRepeat: any): Promise<number>;
+    msgBox(message: string | XoneDataObject, title?: string, flags?: number): number;
+    msgBoxWithSound(Message: any, Title: any, type: any, Sound: any, Vibrate: any, NumberRepeat: any): number;
     /**
      * Open new Edit View and push it in Breadcrumbs stack
      * @param {XoneDataObject|string} param
      */
-    openEditView(param: XoneDataObject | string): Promise<void>;
+    openEditView(param: XoneDataObject | string): void;
     /**
      * Open new Edit View and push it in Breadcrumbs stack then 1
      * @param {XoneDataObject|string} param
      */
-    openEditViewAndExit(param: XoneDataObject | string): Promise<void>;
+    openEditViewAndExit(param: XoneDataObject | string): void;
     /**
      * openFile
      * @param {string} filePath
@@ -6866,24 +6866,24 @@ declare class XoneUI {
      * pickFile
      * @param {string|object} PropName
      * @param {string} Extensions
-     * @returns {Promise<string>}
+     * @returns {string}
      */
-    pickFile(PropName: string | object, Extensions: string): Promise<string>;
+    pickFile(PropName: string | object, Extensions: string): string;
     /**
      * playSound
      * @param {string} sound
-     * @returns {Promise<void>}
+     * @returns {void}
      */
-    playSound(sound: string): Promise<void>;
+    playSound(sound: string): void;
     /**
      * playSoundAndVibrate
      * @param {string} Sounds
      * @param {*} vibrate
      * @param {*} NumberRepeat
      * @param {*} ContinuePlaying
-     * @returns {Promise<void>}
+     * @returns {void}
      */
-    playSoundAndVibrate(Sounds: string, vibrate: any, NumberRepeat: any, ContinuePlaying: any): Promise<void>;
+    playSoundAndVibrate(Sounds: string, vibrate: any, NumberRepeat: any, ContinuePlaying: any): void;
     playSoundVolumen(Number: any): void;
     print(Data: any): void;
     printBIDI(Size: any, Level: any, Data: any): void;
@@ -6954,7 +6954,7 @@ declare class XoneUI {
     /**
      * Show Spinner loader
      */
-    showLoader(): Promise<void>;
+    showLoader(): void;
     showNavigationDrawer(Orientation: any): void;
     /**
      * showNotification
@@ -6983,7 +6983,7 @@ declare class XoneUI {
      * sleep
      * @param {number} Seconds
      */
-    sleep(Seconds: number): Promise<void>;
+    sleep(Seconds: number): void;
     /**
      * speak
      * @param {string} Language
@@ -7001,26 +7001,26 @@ declare class XoneUI {
      * @param {string} PropName
      * @param {string} type
      */
-    startCamera(PropName: string, type?: string): Promise<void>;
+    startCamera(PropName: string, type?: string): void;
     /**
      * startGps
      * @param {*} JSONObject
      * @param {*} Interval
      * @param {*} Flags
      */
-    startGps(JSONObject: any, Interval: any, Flags: any): Promise<void>;
+    startGps(JSONObject: any, Interval: any, Flags: any): void;
     _startGpsTimeout: NodeJS.Timeout;
     /**
      * startGpsV1
      */
-    startGpsV1(): Promise<void>;
+    startGpsV1(): void;
     /**
      * startGpsV2
      * @param {*} JSONObject
      * @param {*} Interval
      * @param {*} Flags
      */
-    startGpsV2(JSONObject: any, Interval: any, Flags: any): Promise<void>;
+    startGpsV2(JSONObject: any, Interval: any, Flags: any): void;
     startKioskMode(): void;
     startPrint(PrinterType: any): void;
     startReplica(): void;
@@ -7052,9 +7052,9 @@ declare class XoneUI {
     updateWaitDialog(message: any, value: any): void;
     /**
      * @param {Blob} file
-     * @returns {Promise<string>}
+     * @returns {string}
      */
-    uploadFile(file: Blob): Promise<string>;
+    uploadFile(file: Blob): string;
     useLastPrinter(True: any): void;
     vibrate(): void;
     writeString(): void;
@@ -7067,11 +7067,11 @@ declare class XoneUI {
 	${xe}
 	${ue}
 	
-	var appData = new XoneApplication();
-	var self = new XoneDataObject();
-	var user = new XoneDataObject();
-	var selfDataColl = new XoneDataCollection();
-	var ui = new XoneUI();
+	const appData = new XoneApplication();
+	const self = new XoneDataObject();
+	const user = new XoneDataObject();
+	const selfDataColl = new XoneDataCollection();
+	const ui = new XoneUI();
 	`,"global.d.ts");x.registerCompletionItemProvider("xml",{provideCompletionItems:(e,t)=>{const a=e.getValueInRange({startLineNumber:1,startColumn:1,endLineNumber:t.lineNumber,endColumn:t.column}),{tagName:s,isAttributeSearch:n}=pe(a);if(s&&n){const i=ce.querySelector(`element[name='${s}']`),o=[];return i==null||i.querySelectorAll("attribute").forEach(r=>{const l=r.getAttribute("name");o.some(b=>b.label===l)||o.push({preselect:!0,label:l,kind:x.CompletionItemKind.Snippet,documentation:l,insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:l+'="${1}"'})}),{suggestions:o}}return s==="script"&&!n?{suggestions:[]}:{suggestions:[{preselect:!0,label:"coll-node",kind:x.CompletionItemKind.Snippet,documentation:"coll",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<coll name="${1:collName}" special="${2:true}" >\n	\n</coll>'},{preselect:!0,label:"prop-node",kind:x.CompletionItemKind.Snippet,documentation:"prop",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<prop name="${1:propName}" type="${2:T}" title="${3:propTitle}" visible="${4:1}" />'},{preselect:!0,label:"contents-node",kind:x.CompletionItemKind.Snippet,documentation:"contents",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<contents name="${1:contentsName}" src="${2:srcName}" />'},{preselect:!0,label:"group-node",kind:x.CompletionItemKind.Snippet,documentation:"group",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<group name="${1:groupName}" id="${2:1}" >\n	\n</group>'},{preselect:!1,label:"frame-node",kind:x.CompletionItemKind.Snippet,documentation:"frame",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:`<frame name="\${1:frameName}" >
 	
 </frame>`},{preselect:!1,label:"param-node",kind:x.CompletionItemKind.Snippet,documentation:"param",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:'<param name="${1:paramName}" />'},{preselect:!1,label:"method-node",kind:x.CompletionItemKind.Snippet,documentation:"method",insertTextRules:x.CompletionItemInsertTextRule.InsertAsSnippet,insertText:`<\${1:methodName}>
